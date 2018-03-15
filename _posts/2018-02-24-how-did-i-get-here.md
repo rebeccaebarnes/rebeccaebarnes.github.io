@@ -3,7 +3,6 @@ layout: post
 title: "How Did I Get Here?"
 date: 2018-02-24
 ---
-# How Did I Get Here?
 
 The earliest memory I have of my connection to numbers is a photograph from a family camping trip with my easter eggs, all lined up in a row, from smallest to largest and me sitting happily beside them. Apparently that was far more important than things like, you know, eating them...
 
