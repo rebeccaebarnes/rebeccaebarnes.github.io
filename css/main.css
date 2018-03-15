@@ -1,5 +1,7 @@
 body {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family:'Sans-Serif', 'Helvetica', 'Arial';
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
     margin: 60px auto;
     width: 70%;
 }
