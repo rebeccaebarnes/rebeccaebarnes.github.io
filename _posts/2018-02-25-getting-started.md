@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting Started"
-date: 2018-02-24
+date: 2018-02-25
 ---
 
 So how does one go about pursuing something of a change in trajectory to the world of data science? Well for me, the idea came about when [this](https://masterdatascience.science.ubc.ca/?utm_source=mds-landing-page&utm_medium=badge&utm_campaign=mds2018-shared&utm_content=Vancouver) popped up on my screen one day. To me, it sounded like everything I should be doing - a combination of coding and statistics that is all about helping people make real life decisions in the world.
