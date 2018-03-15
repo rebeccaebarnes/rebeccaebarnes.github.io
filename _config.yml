@@ -1,2 +1,3 @@
 title: Pursuing Data
 description: my journey in solving problems with numbers
+permalink: /blog/:year/:month/:day/:title
