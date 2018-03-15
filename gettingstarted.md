@@ -30,4 +30,4 @@ I research everything.
       b. Make an [application](https://www.udacity.com/course/data-analyst-nanodegree--nd002), but courses don't start until February
       c. Start brushing up on [statistics](https://www.udacity.com/course/intro-to-statistics--st101)
   
-  *Step eight:** Start Data Analyst Nanodegree with Udacity!
+  **Step eight:** Start Data Analyst Nanodegree with Udacity!
