@@ -1,9 +1,6 @@
 body {
     font-family:'Sans-Serif', 'Helvetica', 'Arial';
     font-size: 1.0em;
-    line-height: 0.9em;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
     margin: 60px auto;
     width: 70%;
 }
