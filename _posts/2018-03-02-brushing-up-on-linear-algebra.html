@@ -8451,15 +8451,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11233,7 +11233,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11676,7 +11676,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11730,14 +11730,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -11768,6 +11768,12 @@ div#notebook {
     </script>
     <!-- End of mathjax configuration --></head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+    </nav>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
@@ -12558,11 +12564,11 @@ True True
 <p>One explanation that I like is that parallel component of $\vec{v}$ (if $\vec{v}$ is projected onto $\vec{b}$) is that the parallel component of $\vec{v}$ is like the shadow made by $\vec{v}$ onto $\vec{b}$ if the sun were shining directly on top of $\vec{b}$.</p>
 <p>The notation for $\vec{v}$ being projected onto $\vec{b}$, or, the normalization of $\vec{v}$ onto $\vec{b}$ is:</p>
 <p>$$
-proj_ \vec{b} ( \, \vec{v} \, ) \, 
+proj_ \vec{b} ( \, \vec{v} \, ) \,
 \\
 $$</p>
 <p>$$
-or 
+or
 \\
 $$</p>
 <p>$$
@@ -12580,8 +12586,8 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Again, following the nice walk-thru provided in the class for the calculation of the magnitude, or length, of $\vec{v} \, ^\parallel$ (assumption: $\theta \; \leqslant 90^o$):</p>
 <p>$$
-(1) \quad cos \, \theta \, = \, 
-\frac{\| \vec{v} \, ^\parallel \|} 
+(1) \quad cos \, \theta \, = \,
+\frac{\| \vec{v} \, ^\parallel \|}
 {\| \vec{v} \|}
 \\
 and
@@ -12741,7 +12747,7 @@ Parallel &amp; perpend of v on b: [1.96851, -2.81077, 0.84807, 2.67983] [1.04, -
 $$
 if \quad \vec{v} \; = \; \left\lgroup \matrix{x_1\cr y_1\cr z_1} \right\rgroup
 \; , \quad \vec{w} \; = \; \left\lgroup \matrix{x_2\cr y_2\cr z_2} \right\rgroup
-\; , \quad then \quad \vec{v} \, \times \, \vec{w} \; = \; 
+\; , \quad then \quad \vec{v} \, \times \, \vec{w} \; = \;
 \left\lgroup \matrix{y_1 z_2 \; - \; y_2 z_1\cr -(x_1 z_2 \; - \; x_2 z_1)\cr x_1 y_2 \; - \; x_2 y_1} \right\rgroup
 $$</p>
 <p>Basically the way this works is you do a bunch of multiply these crosses of this pair, and subtract by the other cross of the pair, for each of the potential paris within the two vectors.</p>
@@ -12889,7 +12895,7 @@ Area of triangle: 42.56494
   </div>
 </body>
 
- 
+
 
 
 </html>
