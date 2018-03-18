@@ -1,11 +1,32 @@
----
-layout: default
-title: Blog
----
-	<h1>{{ page.title }}</h1>
-	<ul class="posts">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Blog Archive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
 
-	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>
+    <header class="blog-header">
+        <h1>Pursuing Data</h1>
+    </header>
+
+    <div class="container">
+        <main>
+            <h2 class="visuallyhidden">Articles</h2>
+
+            <article>
+                <header>
+                    <h2>Blog Archive</h2>
+                </header>
+
+	            <ul class="posts">
+
+	                {% for post in site.posts %}
+	                   <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	                {% endfor %}
+	            </ul>
