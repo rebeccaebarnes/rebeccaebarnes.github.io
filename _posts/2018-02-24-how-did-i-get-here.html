@@ -38,16 +38,14 @@
 
             <div class="sidebar-text">
                 <h3><a href="https://rebeccaebarnes.github.io">Home</a></h3>
-                <p>I am interested in using data to solve problems for people as they engage in the world around them. This is my journey to improve my skills and grow in my understanding of how to do that.</p>
-
-                <h3>Blog Posts</h3>
-                <h4>March 2018</h4>
-                <li><a href="https://rebeccaebarnes.github.io/2018/03/02/brushing-up-on-linear-algebra">Mar 02</a></li>
-                <h4>February 2018</h4>
-                <li><a href="https://rebeccaebarnes.github.io/2018/02/26/learning-python">Feb 26</a></li>
-                <li><a href="https://rebeccaebarnes.github.io/2018/02/25/getting-started">Feb 25</a></li>
-                <li><a href="https://rebeccaebarnes.github.io/2018/02/24/how-did-i-get-here">Feb 24</a></li>
-
+                <div class="PageNavigation">
+                    {% if page.previous.url %}
+                        <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+                    {% endif %}
+                    {% if page.next.url %}
+                        <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+                    {% endif %}
+                </div>
             </div>
         </aside>
     </div>
