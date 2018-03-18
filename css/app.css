@@ -55,6 +55,15 @@ p {
     min-height: 25vh;
 }
 
+.blog-header {
+    background-image: url('../img/headerimage.jpg');
+    background-position: 50% 75%;
+    background-size: cover;
+    padding: 1em;
+    margin-bottom: 2rem;
+    min-height: 25vh;
+}
+
 h1 {
     letter-spacing: 8px;
     position: relative;
