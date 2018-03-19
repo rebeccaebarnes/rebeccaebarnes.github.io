@@ -46,6 +46,19 @@ li {
     line-height: 1.5;
 }
 
+/*** Link Styling ***/
+a:link {
+    color: #02ccba;
+}
+
+a:visited {
+    color: #7d97ad;
+}
+
+a:active {
+    color: #03fce8;
+}
+
 .container {
     margin: auto;
     max-width: 1300px;
