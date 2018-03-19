@@ -35,10 +35,86 @@
                     It was encouraging to realize that my self-taught skills WERE relevant in the formal world of data analysis.
                 </p>
                 <p>
-                    For the full details of the project, including the statistical analysis used to confirm the observations,
-                    you can check it out in it's <a href = "https://github.com/rebeccaebarnes/DAND-Project-1/blob/master/Project%201%20DAND%20REB.pdf">repo</a>.
-                    I would like to have displayed an overview of the project here, but I was have some broken link issues with some of the images.
-                    If I fix it, they will be back here!
+                    If you'd like to see the full details of the project, including the statistical analysis used to confirm the observations,
+                    you can check it out in it's <a href = "https://github.com/rebeccaebarnes/DAND-Project-1/blob/master/Project%201%20DAND%20REB.pdf">repo</a>, but I'll go through some of the highlights here.
+                </p>
+
+                <h2>Comparing Canadian Temperature Changes to Global Changes</h2>
+            </article>
+
+            <h4 style="margin-left: 2.0em">Temperature Changes Over Time for Six Canadian Cities & the Globe</h4>
+
+                    <img class="displayed" src="/img/chart_01.JPG" alt="Chart of temperatures">
+
+            <article>
+                <p>
+                    The graph shows a general trend of increasing temperatures for the time period show.
+                    Close inspection also shows that the patterns in temperature variation for Victoria are substantially different than those of the other five Canadian cities.
+                </p>
+
+                <h3>Geography Influences Temperature Variations Between Cities</h3>
+            </article>
+
+            <h4 style="margin-left: 2.0em">Map of Canada</h4>
+
+                <img class="displayed" src="/img/canada-map.png" alt="Canada: initial image retrieved from Google Maps">
+
+            <article>
+                <p>
+                    As can be seen on the above map, the city of Victory is found on an island just off the west-coast of Canada.
+                    The other five Canadian cities are all located on the eastern side of Canada, relatively close to the St Lawrence River or Lake Ontario.
+                </p>
+                <p>
+                    <strong>Conclusion:</strong>This suggests that geographic proximity and location influence temperature variations found within Canadian cities.
+                </p>
+
+                <h3>Canadian Cities are Colder than the Global Average</h3>
+                <p>
+                    The influences of geography can also be seen when comparing the average temperatures for the Canadian cities to the global temperatures.
+                    Canadian cities have lower temperatures than the global temperatures as a result of their common latitude.
+                    The Canadian cities had latitudes ranging from 43N to 48N - reasonably above the equator.
+                </p>
+                <p>
+                    <strong>Conclusion:</strong>These findings are expected because global temperatures include temperatures from warmer climates that are closer to the equator, increasing the average.
+                </p>
+
+                <h3>Global Temperatures Strongly Correlate With and Predict Global Temperatures</h3>
+            </article>
+
+            <h4 style="margin-left: 2.0em">2014 Temperature Predictions</h4>
+
+                <img class="displayed" src="/img/chart_02.JPG" alt="Prediction of temps 2014">
+
+            <h4 style="margin-left: 2.0em">2015 Temperature Predictions</h4>
+
+                <img class="displayed" src="/img/chart_03.JPG" alt="Prediction of temps 2015">
+
+            <article>
+                <p>
+                    Although geography has a clear influence on city temperature trends and variations, what may be less clear from the original graph is how these interact with changes in global temperatures.
+                    Regression was used to predict the temperatures for the cities from the global temperatures at a 95% confidence interval.
+                    This was then compared to the actual temperatures for those years.
+                    Even though it wasn't possible to confirm that the methodology for calculating the temperatures in the dataset was the same as what was retrieved from online, their were strong predictive capabilities.
+                    The only two predictions that did not fall within a 95% confidence interval were Montreal and Ottawa in 2014.
+                </p>
+                <p>
+                    <strong>Conclusion:</strong>As global temperatures change, cities see a corresponding impact on their local temperatures.
+                </p>
+
+                <h3>Global Temperatures Have Seen a Sharp Increase Since 1980</h3>
+            </article>
+
+            <h4 style="margin-left: 2.0em">Global Temperature Changes Over Time</h4>
+
+                <img class="displayed" src="/img/chart_04.JPG" alt="Graph highlighting changes in global temps">
+
+            <article>
+                <p>
+                    If 1980 is taken as a starting point, and the following 35 years are compared to the 35 years, before 1980, there is an average change in global temperatures of about 0.5C.
+                    This is similar to the amount of change in temperatures for the 150 years prior to that.
+                </p>
+                <p>
+                    <strong>Conclusion:</strong>The trend in global temperatures is one of substantial increase and it is expected that these changes will also be seen at the city level.
                 </p>
             </article>
         </main>
@@ -47,10 +123,7 @@
 
             <div class="sidebar-text">
                 <h3><a href="https://rebeccaebarnes.github.io">Home</a></h3>
-                <p><br>
-                </p>
-
-                <h3>Page Navigation</h3>
+                
                 <div class="PageNavigation">
                     {% if page.previous.url %}
                         <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
