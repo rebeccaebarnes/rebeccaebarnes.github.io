@@ -51,6 +51,11 @@ li {
     max-width: 1300px;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*** Header Styling ***/
 .page-header {
@@ -140,6 +145,26 @@ aside {
 }
 
 
+/*** Page Navigation ***/
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
 /*** Footer Styling ***/
 footer {
     border-top: 2px solid #dbe2e8;
@@ -195,26 +220,6 @@ footer {
         margin-top: 0.5em;
     }
 }
-
-/*** Page Navigation ***/
-.PageNavigation {
-  font-size: 14px;
-  display: block;
-  width: auto;
-  overflow: hidden;
-}
-
-.PageNavigation a {
-  display: block;
-  width: 50%;
-  float: left;
-  margin: 1em 0;
-}
-
-.PageNavigation .next {
-  text-align: right;
-}
-
 
 
 /*** Helper Classes ***/
