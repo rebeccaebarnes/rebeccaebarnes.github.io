@@ -2,3 +2,4 @@ Jupyter-Notebook-Notes/*
 .ipynb_checkpoints/*.*
 _site
 .DS_Store
+test/index.html
