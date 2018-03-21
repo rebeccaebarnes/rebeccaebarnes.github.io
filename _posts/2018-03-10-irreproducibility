@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
-    <link rel="stylesheet" href="../css/normalize.min.css">
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
 
@@ -22,10 +22,10 @@
             <article>
                 <header>
                     <h2>Irreproducibility</h2>
-                    <time datetime="2018-02-25T22:49">Feb 25</time>
+                    <time datetime="2018-03-10T11:50">Mar 10</time>
                 </header>
 
-                <img src="../img/irreproduce.jpg" alt="Magnifying glass and graphs">
+                <img src="/img/irreproduce.jpg" alt="Magnifying glass and graphs">
 
                 <p>
                     I can sometimes find it difficult to even wrap my mouth around the word, but according to <a href="https://www.vocabulary.com/dictionary/irreproducibility" rel="noopener noreferrer" target="_blank">vocabulary.com</a>, 'irreproducibility' refers to 'the trait of not being dependable (n)or reliable.'
