@@ -1,148 +1,103 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Getting My Feet Wet</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans">
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
+---
+layout: posts
+title: Getting My Feet Wet
+---
 
-    <header class="blog-header">
-        <h1>Pursuing Data</h1>
+<article>
+    <header>
+        <h2>Getting My Feet Wet</h2>
+        <time datetime="2018-02-26T22:49">Feb 26</time>
     </header>
 
-    <div class="container">
-        <main>
-            <h2 class="visuallyhidden">Articles</h2>
+    <img src="/img/hot.jpg" alt="Thermometer with shining sun background">
 
-            <article>
-                <header>
-                    <h2>Getting My Feet Wet</h2>
-                    <time datetime="2018-02-26T22:49">Feb 26</time>
-                </header>
+    <p>
+        The first project we were required to complete for the Data Analyst Nanodegree (DAND) was one that asked us to examine trends in global temperatures.
+        This introduced us to the use of SQL, asked us to graph results in Excel, and display the results and analysis in a report.
+        Perhaps the part that I enjoyed most about this project was getting confirmation that the data analysis skills that I had developed,
+        many just as my intuition led me in the course of my work, was on track with what was typically done.
+        It was encouraging to realize that my self-taught skills WERE relevant in the formal world of data analysis.
+    </p>
+    <p>
+        If you'd like to see the full details of the project, including the statistical analysis used to confirm the observations,
+        you can check it out in it's <a href = "https://github.com/rebeccaebarnes/DAND-Project-1/blob/master/Project%201%20DAND%20REB.pdf" rel="noopener noreferrer" target="_blank">repo</a>, but I'll go through some of the highlights here.
+    </p>
 
-                <img src="/img/hot.jpg" alt="Thermometer with shining sun background">
+    <h2>Comparing Canadian Temperature Changes to Global Changes</h2>
+</article>
 
-                <p>
-                    The first project we were required to complete for the Data Analyst Nanodegree (DAND) was one that asked us to examine trends in global temperatures.
-                    This introduced us to the use of SQL, asked us to graph results in Excel, and display the results and analysis in a report.
-                    Perhaps the part that I enjoyed most about this project was getting confirmation that the data analysis skills that I had developed,
-                    many just as my intuition led me in the course of my work, was on track with what was typically done.
-                    It was encouraging to realize that my self-taught skills WERE relevant in the formal world of data analysis.
-                </p>
-                <p>
-                    If you'd like to see the full details of the project, including the statistical analysis used to confirm the observations,
-                    you can check it out in it's <a href = "https://github.com/rebeccaebarnes/DAND-Project-1/blob/master/Project%201%20DAND%20REB.pdf" rel="noopener noreferrer" target="_blank">repo</a>, but I'll go through some of the highlights here.
-                </p>
+<h4 style="margin-left: 2.0em">Temperature Changes Over Time for Six Canadian Cities & the Globe</h4>
 
-                <h2>Comparing Canadian Temperature Changes to Global Changes</h2>
-            </article>
+<img class="displayed" src="/img/chart_01.JPG" alt="Chart of temperatures">
 
-            <h4 style="margin-left: 2.0em">Temperature Changes Over Time for Six Canadian Cities & the Globe</h4>
+<article>
+    <p>
+        The graph shows a general trend of increasing temperatures for the time period show.
+        Close inspection also shows that the patterns in temperature variation for Victoria are substantially different than those of the other five Canadian cities.
+    </p>
 
-                    <img class="displayed" src="/img/chart_01.JPG" alt="Chart of temperatures">
+    <h3>Geography Influences Temperature Variations Between Cities</h3>
+</article>
 
-            <article>
-                <p>
-                    The graph shows a general trend of increasing temperatures for the time period show.
-                    Close inspection also shows that the patterns in temperature variation for Victoria are substantially different than those of the other five Canadian cities.
-                </p>
+<h4 style="margin-left: 2.0em">Map of Canada</h4>
 
-                <h3>Geography Influences Temperature Variations Between Cities</h3>
-            </article>
+<img class="displayed" src="/img/canada-map.png" alt="Canada: initial image retrieved from Google Maps">
 
-            <h4 style="margin-left: 2.0em">Map of Canada</h4>
+<article>
+    <p>
+        As can be seen on the above map, the city of Victory is found on an island just off the west-coast of Canada.
+        The other five Canadian cities are all located on the eastern side of Canada, relatively close to the St Lawrence River or Lake Ontario.
+    </p>
+    <p>
+        <strong>Conclusion:</strong>This suggests that geographic proximity and location influence temperature variations found within Canadian cities.
+    </p>
 
-                <img class="displayed" src="/img/canada-map.png" alt="Canada: initial image retrieved from Google Maps">
+    <h3>Canadian Cities are Colder than the Global Average</h3>
+    <p>
+        The influences of geography can also be seen when comparing the average temperatures for the Canadian cities to the global temperatures.
+        Canadian cities have lower temperatures than the global temperatures as a result of their common latitude.
+        The Canadian cities had latitudes ranging from 43N to 48N - reasonably above the equator.
+    </p>
+    <p>
+        <strong>Conclusion:</strong>These findings are expected because global temperatures include temperatures from warmer climates that are closer to the equator, increasing the average.
+    </p>
 
-            <article>
-                <p>
-                    As can be seen on the above map, the city of Victory is found on an island just off the west-coast of Canada.
-                    The other five Canadian cities are all located on the eastern side of Canada, relatively close to the St Lawrence River or Lake Ontario.
-                </p>
-                <p>
-                    <strong>Conclusion:</strong>This suggests that geographic proximity and location influence temperature variations found within Canadian cities.
-                </p>
+    <h3>Global Temperatures Strongly Correlate With and Predict Global Temperatures</h3>
+</article>
 
-                <h3>Canadian Cities are Colder than the Global Average</h3>
-                <p>
-                    The influences of geography can also be seen when comparing the average temperatures for the Canadian cities to the global temperatures.
-                    Canadian cities have lower temperatures than the global temperatures as a result of their common latitude.
-                    The Canadian cities had latitudes ranging from 43N to 48N - reasonably above the equator.
-                </p>
-                <p>
-                    <strong>Conclusion:</strong>These findings are expected because global temperatures include temperatures from warmer climates that are closer to the equator, increasing the average.
-                </p>
+<h4 style="margin-left: 2.0em">2014 Temperature Predictions</h4>
 
-                <h3>Global Temperatures Strongly Correlate With and Predict Global Temperatures</h3>
-            </article>
+<img class="displayed" src="/img/chart_02.JPG" alt="Prediction of temps 2014">
 
-            <h4 style="margin-left: 2.0em">2014 Temperature Predictions</h4>
+<h4 style="margin-left: 2.0em">2015 Temperature Predictions</h4>
 
-                <img class="displayed" src="/img/chart_02.JPG" alt="Prediction of temps 2014">
+<img class="displayed" src="/img/chart_03.JPG" alt="Prediction of temps 2015">
 
-            <h4 style="margin-left: 2.0em">2015 Temperature Predictions</h4>
+<article>
+    <p>
+        Although geography has a clear influence on city temperature trends and variations, what may be less clear from the original graph is how these interact with changes in global temperatures.
+        Regression was used to predict the temperatures for the cities from the global temperatures at a 95% confidence interval.
+        This was then compared to the actual temperatures for those years.
+        Even though it wasn't possible to confirm that the methodology for calculating the temperatures in the dataset was the same as what was retrieved from online, their were strong predictive capabilities.
+        The only two predictions that did not fall within a 95% confidence interval were Montreal and Ottawa in 2014.
+    </p>
+    <p>
+        <strong>Conclusion:</strong>As global temperatures change, cities see a corresponding impact on their local temperatures.
+    </p>
 
-                <img class="displayed" src="/img/chart_03.JPG" alt="Prediction of temps 2015">
+    <h3>Global Temperatures Have Seen a Sharp Increase Since 1980</h3>
+</article>
 
-            <article>
-                <p>
-                    Although geography has a clear influence on city temperature trends and variations, what may be less clear from the original graph is how these interact with changes in global temperatures.
-                    Regression was used to predict the temperatures for the cities from the global temperatures at a 95% confidence interval.
-                    This was then compared to the actual temperatures for those years.
-                    Even though it wasn't possible to confirm that the methodology for calculating the temperatures in the dataset was the same as what was retrieved from online, their were strong predictive capabilities.
-                    The only two predictions that did not fall within a 95% confidence interval were Montreal and Ottawa in 2014.
-                </p>
-                <p>
-                    <strong>Conclusion:</strong>As global temperatures change, cities see a corresponding impact on their local temperatures.
-                </p>
+<h4 style="margin-left: 2.0em">Global Temperature Changes Over Time</h4>
 
-                <h3>Global Temperatures Have Seen a Sharp Increase Since 1980</h3>
-            </article>
+<img class="displayed" src="/img/chart_04.JPG" alt="Graph highlighting changes in global temps">
 
-            <h4 style="margin-left: 2.0em">Global Temperature Changes Over Time</h4>
-
-                <img class="displayed" src="/img/chart_04.JPG" alt="Graph highlighting changes in global temps">
-
-            <article>
-                <p>
-                    If 1980 is taken as a starting point, and the following 35 years are compared to the 35 years, before 1980, there is an average change in global temperatures of about 0.5C.
-                    This is similar to the amount of change in temperatures for the 150 years prior to that.
-                </p>
-                <p>
-                    <strong>Conclusion:</strong>The trend in global temperatures is one of substantial increase and it is expected that these changes will also be seen at the city level.
-                </p>
-            </article>
-        </main>
-
-        <aside>
-
-            <div class="sidebar-text">
-                <h3><a href="https://rebeccaebarnes.github.io">Home</a></h3>
-
-                <div class="PageNavigation">
-                    {% if page.previous.url %}
-                        <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
-                    {% endif %}
-                    {% if page.next.url %}
-                        <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
-                    {% endif %}
-                </div>
-            </div>
-        </aside>
-    </div>
-
-    <footer>
-    <ul>
-        <a href="https://github.com/rebeccaebarnes" rel="noopener noreferrer" target="_blank">github.com/rebeccaebarnes</a>
-        <p>The design of this site was gratefully created through a fork of the Udacity <a href="https://github.com/udacity/course-git-blog-project" rel="noopener noreferrer" target="_blank">course-git-blog-project</a> repo.</p>
-    </ul>
-    </footer>
-
-    <script src="js/app.js"></script>
-</body>
-</html>
+<article>
+    <p>
+        If 1980 is taken as a starting point, and the following 35 years are compared to the 35 years, before 1980, there is an average change in global temperatures of about 0.5C.
+        This is similar to the amount of change in temperatures for the 150 years prior to that.
+    </p>
+    <p>
+        <strong>Conclusion:</strong>The trend in global temperatures is one of substantial increase and it is expected that these changes will also be seen at the city level.
+    </p>
+</article>
