@@ -3,75 +3,83 @@ layout: posts
 title: Effective Visualizations
 ---
 
-<header>
-    <h2>Effective Visualizations</h2>
-    <time datetime="2018-03-20T13:13">Mar 20</time>
-</header>
+<article>
+    <header>
+        <h2>Effective Visualizations</h2>
+        <time datetime="2018-03-20T13:13">Mar 20</time>
+    </header>
 
-<img src="/img/code-lines.jpg" alt="Projected screen of code text">
+    <img src="/img/code-lines.jpg" alt="Projected screen of code text">
 
-<p>
-    I think that the presentation of complex data can quickly end up causing the user to feel overwhelmed with the required interpretation.
-    There is too much going on, and they can feel uncertain how to apply the information.
-</p>
-<p>
-    We had a <a href="https://towardsdatascience.com/10-ways-to-take-your-boss-on-a-journey-through-the-data-14a3fdbb3503" rel="noopener noreferrer" target="_blank">great article</a> for the presentation of data posted in our Slack channel, this time specifically using <a href="https://www.tableau.com/" rel="noopener noreferrer" target="_blank">Tableau</a>.
-    The articles starts off with a number of different quotes related to using data to tell stories.
-    I think my favourite is the first one, <em>"People hear statistics, but they feel stories,"</em> because it resonates with me deeply.
-    Coming from a field where people can be hesitant, or at times even suspicious, to embrace data, telling stories is my go-to strategy.
-    What I liked most about this article were both the variety of graph types shown, but also how these were connected to interpretation and recommendations.
-</p>
-<h3>Some of my favourites</h3>
-<h4>Prediction models</h4>
+    <p>
+        I think that the presentation of complex data can quickly end up causing the user to feel overwhelmed with the required interpretation.
+        There is too much going on, and they can feel uncertain how to apply the information.
+    </p>
+    <p>
+        We had a <a href="https://towardsdatascience.com/10-ways-to-take-your-boss-on-a-journey-through-the-data-14a3fdbb3503" rel="noopener noreferrer" target="_blank">great article</a> for the presentation of data posted in our Slack channel, this time specifically using <a href="https://www.tableau.com/" rel="noopener noreferrer" target="_blank">Tableau</a>.
+        The articles starts off with a number of different quotes related to using data to tell stories.
+        I think my favourite is the first one, <em>"People hear statistics, but they feel stories,"</em> because it resonates with me deeply.
+        Coming from a field where people can be hesitant, or at times even suspicious, to embrace data, telling stories is my go-to strategy.
+        What I liked most about this article were both the variety of graph types shown, but also how these were connected to interpretation and recommendations.
+    </p>
+    <h3>Some of my favourites</h3>
+    <h4>Prediction models</h4>
+</article>
 
-<img class="centre-img" width="100%" src="/img/line-chart-plus-error.png" alt="Line chart with prediction error">
+<img class="displayed" width="100%" src="/img/line-chart-plus-error.png" alt="Line chart with prediction error">
 
-<p>
-    <strong>With the narrative:</strong>
-    <em>According to our past and current sales and seasonal pattern, we can forecast sales for 2016 like so.
-    The model has determined that there is a 95% likelihood that the value of sales will be within the shaded area for 2016.
-    As you can see, February is typically is a slow month for consumer and corporate products.
-    Shall we plan a promotion for that month?</em>
-    <br>
-    <br>
-    I like this because it very clearly shows the variability in the ranges for the models used without getting caught up in statistical jargon.
-</p>
+<article>
+    <p>
+        <strong>With the narrative:</strong>
+        <em>According to our past and current sales and seasonal pattern, we can forecast sales for 2016 like so.
+        The model has determined that there is a 95% likelihood that the value of sales will be within the shaded area for 2016.
+        As you can see, February is typically is a slow month for consumer and corporate products.
+        Shall we plan a promotion for that month?</em>
+        <br>
+        <br>
+        I like this because it very clearly shows the variability in the ranges for the models used without getting caught up in statistical jargon.
+    </p>
 
-<h4>Multiple variables over time</h4>
+    <h4>Multiple variables over time</h4>
+</article>
 
-<img class="centre-img" src="/img/stacked-line-charts.png" alt="Stacked area charts over time">
+<img class="displayed" src="/img/stacked-line-charts.png" alt="Stacked area charts over time">
 
-<p>
-    <strong>With the narrative:</strong>
-    <em>Our unprofitable days are more likely to occur in the early months of the year ( January to March).
+<article>
+    <p>
+        <strong>With the narrative:</strong>
+        <em>Our unprofitable days are more likely to occur in the early months of the year ( January to March).
             Let’s look for ways to up-sell each customer for these months to make us profitable.</em>
-    <br>
-    <br>
-    What I think they have done well:
-</p>
-<ul type="square">
-    <li>Present three variables in a way that allows each to be easily distinguished and individually examined</li>
-    <li>Allow for smooth visual processing from year to year, while also keeping each year distinct</li>
-    <li>The inclusion of the area shading assists with comprehension</li>
-    <li>Highlight the variable of key importance: Unprofitable Days</li>
-    <li>Provide a clear recommendation for adjusting behaviour/practice based on the data</li>
-</ul>
+        <br>
+        <br>
+        What I think they have done well:
+    </p>
+    <ul type="square">
+        <li>Present three variables in a way that allows each to be easily distinguished and individually examined</li>
+        <li>Allow for smooth visual processing from year to year, while also keeping each year distinct</li>
+        <li>The inclusion of the area shading assists with comprehension</li>
+        <li>Highlight the variable of key importance: Unprofitable Days</li>
+        <li>Provide a clear recommendation for adjusting behaviour/practice based on the data</li>
+    </ul>
 
-<h4>"On track" comparisons</h4>
+    <h4>"On track" comparisons</h4>
+</article>
 
-<img class="centre-img" src="/img/on-track-comparison.png" alt="Stacked line charts over time">
+<img class="displayed" src="/img/on-track-comparison.png" alt="Stacked line charts over time">
 
-<p>
-    <strong>With the narrative:</strong>
-    <em>Consumer sales is 5% ahead of the pace; this is likely driven by our newly opened store in Toronto.
-        Corporate sales is well-behind the pace as expected due to the resignation of two sales reps.
-        Merchandise is 5% behind the pace; consider replacing two sales reps as soon as possible and re-allocating the advertising budget to Merchandise so we can hit the revenue goals by the end of the year.</em>
-    <br>
-    <br>
-    What I like about this chart:
-</p>
-<ul type="square">
-    <li>The density of information provided without being overwhelming</li>
-    <li>The formatting of the various graphical elements that create a very clean visual style</li>
-    <li>The recommendation that targets an achievable action based on the data</li>
-</ul>
+<article>
+    <p>
+        <strong>With the narrative:</strong>
+        <em>Consumer sales is 5% ahead of the pace; this is likely driven by our newly opened store in Toronto.
+            Corporate sales is well-behind the pace as expected due to the resignation of two sales reps.
+            Merchandise is 5% behind the pace; consider replacing two sales reps as soon as possible and re-allocating the advertising budget to Merchandise so we can hit the revenue goals by the end of the year.</em>
+        <br>
+        <br>
+        What I like about this chart:
+    </p>
+    <ul type="square">
+        <li>The density of information provided without being overwhelming</li>
+        <li>The formatting of the various graphical elements that create a very clean visual style</li>
+        <li>The recommendation that targets an achievable action based on the data</li>
+    </ul>
+</article>
