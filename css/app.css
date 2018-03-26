@@ -137,6 +137,12 @@ article img {
     width: auto;
 }
 
+.centre-img {
+    width: auto;
+    display:block;
+    margin-left:auto;
+    margin-right: auto;
+}
 .read-more {
     color: #02ccba;
     font-family: 'Open Sans', sans-serif;
