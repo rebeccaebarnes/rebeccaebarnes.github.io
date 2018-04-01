@@ -127,12 +127,25 @@ article img {
     width: 100%;
 }
 
-.other-img {
+.left-img {
     width: auto;
+    height: 100%;
+    margin-right: 1.0em;
+    margin-bottom: 0.2em;
+    align: left;
+}
+
+.right-img {
+    width: auto;
+    height: 100%;
+    margin-left: 1.0em;
+    margin-bottom: 0.2em;
+    align: right;
 }
 
 .centre-img {
     width: auto;
+    height: 100%;
     display:block;
     margin-left:auto;
     margin-right: auto;
