@@ -1,0 +1,107 @@
+---
+layout: posts
+title: Bootstrapping
+---
+
+<article>
+    <h2>Bootstrapping</h2>
+    <time datetime="2018-04-29T12:56">Apr 29</time>
+</header>
+
+<img src="/img/bat-claw.jpg" alt="Bat arm holding onto bar">
+
+<p>
+    This is what bootstrapping is like, yeah?
+    In class we were told that the term comes from the idea of being stuck in quicksand and pulling yourself out by your own bootstraps.
+    So bootstrapping is fixing the problem yourself, getting what you need to solve the issue with what you already have.
+</p>
+<p>
+    So what is the problem we are trying to solve? And what are the resources that we have to solve it?
+</p>
+
+<h3>The Problem to Solve</h3>
+<img class="right-img" src="/img/umbrellas.jpg" align="right" alt="Umbrellas on crosswalk"></a>
+<p>
+    Quite simply, the problem is - how do we answer a question about a group of people if we can't ask every person?
+    <br>
+    <br>
+    Let's say that you want to know the proportion of black umbrellas used by the people of Vancouver.
+    (Let's face it, it rains a LOT here!) You could go to the city centre one lunch hour and take tallies of the colors of the umbrellas.
+    If the count you get looks something like the picture to the right, you'd probably say a bit over 10%.
+    <br>
+    <br>
+    But doesn't this just mean that you know about the people carrying umbrellas at that particular time?
+    How do you use this information to gain insight into the entire population?
+</p>
+
+<h3>The Available Resources</h3>
+<p>
+    So if all you had was this picture, what resources do you have to be able to answer your question?
+    <br>
+    <br>
+    The answer is actually the picture itself! (Plus this very intriguing concept of using this information to bootstrap to estimates of the population.)
+</p>
+<h3>How to Bootstrap</h3>
+<p>
+    So to bootstrap the above information, you could do something like this:
+    <ol>
+        <li>Take bucket and fill it with white (non-black umbrellas) and black balls (black umbrellas). (If you represented the bucket as a list of 1's and 0's it would look something like this:
+            <br>[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])</li>
+        <li>You would then choose a sample size, say 200, and you would close your eyes and pick one of the balls from your bucket and record it's colour. Then you would put the ball back into the bucket, swirl it around, and pick again. You'd do that 200 times.</li>
+        <li>For your 200 picks, you'd then find the proportion of black balls/umbrellas for that sample. (You could just count the number of black balls and then divide that by 200)</li>
+        <li>You would then repeat the above process for something like 10,00 times and record all of the different proportions you found.</li>
+        <li>You could then plot the frequency of all the proportions you found, calculate the average of all of the proportions, and cut off 2.5% from each tail of the frequency distribution to create a 95% confidence interval.</li>
+    </ol>
+</p>
+<p>If you did that, the distribution of the proportion of black umbrellas would look something like this:</p>
+<div>
+<img class="centre-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYAAAAE6CAYAAAAfloWsAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDIuMi4wLCBodHRwOi8vbWF0cGxvdGxpYi5vcmcvFvnyVgAAIABJREFUeJzt3Xu4HFWZ7/Hvj3BRiUowAUMSCGAcxGEMEC6jqCAKARF0BAkIBMTBC5zRQY8wwgwRZQ46XjkKiBoDo4h4vBAQh4loUBguCYghASGbEElICIHIJYAo4T1/rLWh6PRt37o3rN/nefrp6lWrqt5aVV1v1arqvRURmJlZeTbodgBmZtYdTgBmZoVyAjAzK5QTgJlZoZwAzMwK5QRgZlYoJ4BhSNIsSVc0+jwcSJohaeEQzXuppE9WPoekQ4doWUO2Hn0l6U2SFkj6i6S5A5zXoLZZ7TbptiHe/ybm9ptS7/OLSZEJQNIYSefmnfopSaskXS3pHd2OrYGPAUcN9UIkHZt39JC0TtLDkuZLOkvSFjXVvwi8tc357p3nObrNUHYDzu1L7G3E0OhL3PZ6dMDXgN8D2wP/UK9CPhmIyutBSVdI2qGjkbbQbJsPt2RSsiITAPBjYHfgeOC1wEHAL4BXdTOoRiLikYh4uEOLewIYC4wH9gC+ChwMLJT0ukpMayPiocFcsKSN87xXR8QTgznvRoZiPQbgNcCvImJZRKxpUu+XpG00FtgPeCnw0w7E94LWu3/Zc4pLAJI2A94MnBoRV0fEHyNiXkR8MSIuqdQ7StI8SY9JekDSjySNq4zvPcM5QNLNkp6U9FtJ4yW9VdLvJa3NZ2evqkw3K5ednq881kr6rqSXNom5tktobr6C+fd8BviApC9K2qBSZ0tJs3Ncf5R0nKSFkma0aKKIiPsjYmVE3BkR3wP+HngYOL8y/+ddgkvaKV9FPZrb7PeS9pE0Efh1rrY6t9msynqcl2NfDVyXy+udIb5a0s8lPZHX59krokZn9zXdIPfk93m5fG6D9dhA0r9KWpavDm+TdEidZb1X0pwcz+2trh4lbSLpq3mb/1nSDZL2qs4TeCUwM8//2Cazeypvo/sj4hbgK8AOLfahsyXdmfeHpZK+IOklNXXeKenGXOchSZfX1qnUPSpv64ObrXcrlfacJumavOzfSfo7SX8r6X8kPS7pWknb1pn+g5LuzdP9TJUrjsp37RRJy4HluXxjSZ+XtDzPe56k/fsQ8whJ35F0T17uYkmfqvn+1f0+DKSthkJxCQBYm18HN9q5s42BM4A3kK4QRgM/qFPvM8DHSWfLo4AfAv8GnADsDbwemFEzzVvzfPcF3ks6i/t8H9fj/cDTwBuBk3IMh1fGXwhsA7wNOITUhbRNH5cBpLNk0sH/LZLGNKh2MbCSdGW1M2md/wwsI60jpLYYS+rS6nUUIFJSPqZJGJ8BZgOTgQuAi2oP+C3snt+n5hjqdrHk2P43cAqwE+nM+ieSJtfUOws4h7Qd5wGXSBrZZPlfIG2fD5Da5zbgvySNJbXRWNLV18fz8A/bWSlJL8/zvS0inmxS9fG87NcBHwWmAadV5jMVuAyYA+wK7ANcQ51jhKR/Av4vcFBEzG4nzjZ8hvQd2Jl0snFxXsZppG33ElJ7V00k7T+HAG8HJgEza+q8Ffg70nbfN5d9N5cfSdrGFwKXS3pDm7FuANwHvI/UnqcBnwaOq9Rp9H0YXiKiuBfpgLSGtEGuJ/UD79Fimh2AAMbnz3vnz/tX6pyUy3aplM0AFlY+zyLt4CMrZUcBTwGbVupcUTNN9fNc4Pqa+OYA387Df5Pj2LMyfgKwDpjRZB2PBdY2GDc1z3P3Buv1KDC9wbS9bTW6pnwusKBO/aXAJyufA/hWTZ1fAt/LwxNznSk1dQI4tEWd2vW4D/i3OnHWLutDlfHjctleDdZ/U+AvwDGVshHA3cDnKmVrgWNb7IezSIm/90QmgHuBv2207g3m82Ggp/L5OuCSJvWXAp8EzgRWATu3iLPuNq/dvg3a86Bc9g+N9s283dYBW1fK9srTTaq01Wpgk0qd7YFnqtPl8p8B59bbVxrtOzXTnw38sp3vw3B6lXgFQET8GNgKeBep7/+NwA2SPt1bR9Iuki7L3Q2PAfPzqK1rZregMrwqv99WU1Z7A3VBpLPqXteTrji278NqLKj5vKKynB1IO3lvzETEslynv9Q7qwbjvwx8W9KvJJ2m9m9K3txmvevrfN6xzWnbIukVpP3iuppR19ZZVrX9e9u1djv32h7YqDrfiFhH/9fhN6QrocmkK89fAf8taUKjCSQdmrtR7pe0ltRtVN2XdwaubrHcjwH/REp0v+tH3M208z3aVNLLKmX3RcS9lc83kvb711XKFkbEU5XPu5D25duVul/X5vZ4J334/kn6sNIDEqvz9P/M89uzv9+HjioyAQBExJ8jYk5EnBkRbwS+A8zI/YObAleRLsmPJj2VMjVPWnsj6a/V2eZ515YNRTv/teZzdTli8O2Yl7G03siImJHr/IyUUBdI+kAb8318EGJ7Jr8/u96SNhrA/OoludqyZ9s/8ikfjbdzs+TZnz/H+0RE9OTXTaSHGV5B6nZcf+HSnsAlpH36XaSD/emkpNQX1+Z4j2ij7qP5/ZV1xm0GPFJTtt73qEFZX79LtfvXBnleu/FcEp1MShrt7K9IOpz0cMQsYP88/blUjg0D+D50VLEJoI7bgQ1JfY07kPr8Px0Rv4mIP9D47K4/dspJpteepC6Cuwdp/neQtu2uvQWSxpPObvss921/GLgmIlY3qhcRiyPinIh4JymhfjCP+kt+H9Gf5Wd71vl8Rx7ujWlsZXxtn33LGCLiUdLZ/F41o/Yi7R/91ZOX/+x8JY0g3VwfyHx7BSkJvqzB+DeRzpY/G+mBh8Wsfz/odzzXR97IzaT7VSdL+tcWdRfnmHatFkrajpQU7mwxfTvG1Vz17E7a7+9oUB/Segp4dSWJ9r7ua3O5ewE3RsTXI+KWiOihztVDk+/DsLFhtwPoNKUncn5Eulm0AHgMmAJ8Crg6Ih6VdC+pT/4kSd8gnR18dhDD2JD0tMeZpIPy2aQ+7sE4GyYi7pR0FXC+pI+Q7nX8B+mKptUZpyS9Og+/knSmdEoervvER3765Iukdl0KbEn+kuQqf8zLfaeky4Ena7rA2vEPkuaR+uMPJR2s9sjr+6SkG4BTJN2dY/0/NdM/ADwJ7C9pKfDniKg9C4XUTmdKWkw64B1FukG9a526bYmIxyWdB5wt6UHSE0n/TGqn/vzeYZPKNhpFuvc0Eri8Qf27SAfL95O6nfZn/bP4s0g3QntINzBFOth/MyqP5EbEPEn7kbqcIiI+V2+BEfGYpG8D/yHpKdJ3bQLpRu+NwG/7utJ1PAlcKOlk0qOw5wM/zwmuroi4S9L3gVmSPgHcAmxOumexJCJ+0sZy7wKOlXQAKblPI91U/hO09X0YNkq8AlgL3EDqz7wGWAT8O2mnPxzSc+jAdODdpDO0M4CTBzGG3uX+mvSUya9ICWgwHUt67G0u6emZ75MOgq2eRHgZ6emFFcBNpPW+nHSTsdGZ1TrSgehC0pndT0kHmpMB8pnVGaSDzCrg6/1Ynxmkm/cLgI8Ax0XEvMr43svrecA3SV0cz4qIp0n91x/M63ZZg+WcQ0oCXwAWAu8B3hsRt/Yj5qpTgEtJT6DcSn4yJSJW9mNebydto5Wkg8puwGERMbde5Yi4nLROXyW13ztIT6pV61xJWtcDSGfJ15CeBHqGGrnbaT/gk5JOrx1f8THSidbZpP39QlK//kGVbrOBWErq2rqc9B1awvOfxGnkONJ2+ALwB+AK4C2kE5V2fJO0LS8m7W8TgS9Vxjf9PgwnGpztYO1SegZ+dEQc1OHljiYd+I7IN8HNrHDFdQGVQtLbgJeTzri2IJ19Pwj8VzfjMrPhwwngxWsj4HPAdqS+/xuBtwzWfQYze+FzF5CZWaFKvAlsZmY4AZiZFcsJwMysUE4AZmaFcgIwMyuUE4CZWaGcAMzMCuUEYGZWKCcAM7NCOQGYmRXKCcDMrFBOAGZmhXICMDMrlBOAmVmhnADMzArlBGBmVignADOzQjkBmJkValj/T+DRo0fHxIkTux2GmdkLys033/xgRIxpVW9YJ4CJEycyf/78bodhZvaCIumP7dRzF5CZWaGcAMzMCuUEYGZWKCcAM7NCOQGYmRXKCcDMrFBOAGZmhXICMDMrlBOAmVmhhvUvgc2GsxGzL+7KctcdfGRXlmsvPr4CMDMrlBOAmVmhnADMzArlBGBmVignADOzQjkBmJkVygnAzKxQTgBmZoVyAjAzK5QTgJlZoZwAzMwK5QRgZlYoJwAzs0I5AZiZFaplApA0QdKvJd0haZGkj+XyGZLuk3Rrfh1YmeZfJPVIulPS/pXyqbmsR9KpQ7NKZmbWjnb+H8DTwCci4hZJLwduljQnj/tKRHyxWlnSjsA04PXAVsAvJb02j/4G8A5gOTBP0uyIuH0wVsTMzPqmZQKIiJXAyjz8mKQ7gHFNJjkEuCQingLukdQD7J7H9UTEEgBJl+S6TgBmZl3Qp3sAkiYCOwM35qKTJC2QNFPSqFw2DlhWmWx5LmtUbmZmXdB2ApA0Evgx8PGIeBQ4D9gemEy6QvhSb9U6k0eT8trlnCBpvqT5q1evbjc8MzPro7b+J7CkjUgH/+9HxE8AImJVZfy3gCvyx+XAhMrk44EVebhR+bMi4gLgAoApU6aslyDMqrr1f3nNXgzaeQpIwHeAOyLiy5XysZVq7wEW5uHZwDRJm0jaFpgE3ATMAyZJ2lbSxqQbxbMHZzXMzKyv2rkCeBNwNHCbpFtz2aeBIyRNJnXjLAU+BBARiyRdSrq5+zRwYkSsA5B0EnAVMAKYGRGLBnFdzMysD9p5Cuha6vffX9lkmrOAs+qUX9lsOjMz6xz/EtjMrFBOAGZmhXICMDMrlBOAmVmhnADMzArlBGBmVignADOzQjkBmJkVygnAzKxQTgBmZoVyAjAzK5QTgJlZoZwAzMwK5QRgZlYoJwAzs0I5AZiZFcoJwMysUG39U3izVvzP2c1eeHwFYGZWKCcAM7NCOQGYmRXKCcDMrFBOAGZmhXICMDMrlBOAmVmhnADMzArlBGBmVignADOzQjkBmJkVqmUCkDRB0q8l3SFpkaSP5fLNJc2RtDi/j8rlknSOpB5JCyTtUpnX9Fx/saTpQ7daZmbWSjtXAE8Dn4iI1wF7AidK2hE4Fbg6IiYBV+fPAAcAk/LrBOA8SAkDOAPYA9gdOKM3aZiZWee1TAARsTIibsnDjwF3AOOAQ4ALc7ULgXfn4UOAiyK5AdhM0lhgf2BORKyJiD8Bc4Cpg7o2ZmbWtj7dA5A0EdgZuBHYMiJWQkoSwBa52jhgWWWy5bmsUbmZmXVB2wlA0kjgx8DHI+LRZlXrlEWT8trlnCBpvqT5q1evbjc8MzPro7YSgKSNSAf/70fET3Lxqty1Q35/IJcvByZUJh8PrGhS/jwRcUFETImIKWPGjOnLupiZWR+08xSQgO8Ad0TElyujZgO9T/JMBy6rlB+TnwbaE3gkdxFdBewnaVS++btfLjMzsy5o519Cvgk4GrhN0q257NPA2cClko4H7gUOy+OuBA4EeoAngOMAImKNpM8C83K9MyNizaCshZmZ9VnLBBAR11K//x5g3zr1AzixwbxmAjP7EqCZmQ0N/xLYzKxQTgBmZoVyAjAzK5QTgJlZoZwAzMwK5QRgZlYoJwAzs0I5AZiZFcoJwMysUE4AZmaFcgIwMyuUE4CZWaGcAMzMCuUEYGZWKCcAM7NCOQGYmRXKCcDMrFBOAGZmhXICMDMrlBOAmVmhnADMzArlBGBmVignADOzQjkBmJkVygnAzKxQTgBmZoVyAjAzK5QTgJlZoVomAEkzJT0gaWGlbIak+yTdml8HVsb9i6QeSXdK2r9SPjWX9Ug6dfBXxczM+qKdK4BZwNQ65V+JiMn5dSWApB2BacDr8zTnShohaQTwDeAAYEfgiFzXzMy6ZMNWFSLiN5Imtjm/Q4BLIuIp4B5JPcDueVxPRCwBkHRJrnt7nyM2M7NBMZB7ACdJWpC7iEblsnHAskqd5bmsUbmZmXVJfxPAecD2wGRgJfClXK46daNJ+XoknSBpvqT5q1ev7md4ZmbWSr8SQESsioh1EfEM8C2e6+ZZDkyoVB0PrGhSXm/eF0TElIiYMmbMmP6EZ2ZmbehXApA0tvLxPUDvE0KzgWmSNpG0LTAJuAmYB0yStK2kjUk3imf3P2wzMxuoljeBJf0A2BsYLWk5cAawt6TJpG6cpcCHACJikaRLSTd3nwZOjIh1eT4nAVcBI4CZEbFo0NfGzMza1s5TQEfUKf5Ok/pnAWfVKb8SuLJP0ZmZ2ZDxL4HNzArlBGBmVignADOzQjkBmJkVygnAzKxQTgBmZoVyAjAzK5QTgJlZoZwAzMwK5QRgZlYoJwAzs0K1/FtAZja8jJh9cdeWve7gI7u2bBt8vgIwMyuUE4CZWaGcAMzMCuUEYGZWKCcAM7NCOQGYmRXKCcDMrFBOAGZmhXICMDMrlBOAmVmhnADMzArlBGBmVignADOzQjkBmJkVygnAzKxQTgBmZoVyAjAzK1TLBCBppqQHJC2slG0uaY6kxfl9VC6XpHMk9UhaIGmXyjTTc/3FkqYPzeqYmVm72rkCmAVMrSk7Fbg6IiYBV+fPAAcAk/LrBOA8SAkDOAPYA9gdOKM3aZiZWXe0TAAR8RtgTU3xIcCFefhC4N2V8osiuQHYTNJYYH9gTkSsiYg/AXNYP6mYmVkH9fcewJYRsRIgv2+Ry8cByyr1lueyRuVmZtYlg30TWHXKokn5+jOQTpA0X9L81atXD2pwZmb2nP4mgFW5a4f8/kAuXw5MqNQbD6xoUr6eiLggIqZExJQxY8b0MzwzM2ulvwlgNtD7JM904LJK+TH5aaA9gUdyF9FVwH6SRuWbv/vlMjMz65INW1WQ9ANgb2C0pOWkp3nOBi6VdDxwL3BYrn4lcCDQAzwBHAcQEWskfRaYl+udGRG1N5bNzKyDWiaAiDiiwah969QN4MQG85kJzOxTdGZmNmT8S2Azs0I5AZiZFcoJwMysUE4AZmaFcgIwMyuUE4CZWaGcAMzMCuUEYGZWKCcAM7NCOQGYmRXKCcDMrFBOAGZmhXICMDMrlBOAmVmhnADMzArlBGBmVqiW/xDGXlhGzL642yGY2QuErwDMzArlBGBmVignADOzQjkBmJkVygnAzKxQTgBmZoVyAjAzK5QTgJlZoZwAzMwK5QRgZlYoJwAzs0INKAFIWirpNkm3SpqfyzaXNEfS4vw+KpdL0jmSeiQtkLTLYKyAmZn1z2BcAewTEZMjYkr+fCpwdURMAq7OnwEOACbl1wnAeYOwbDMz66eh6AI6BLgwD18IvLtSflEkNwCbSRo7BMs3M7M2DDQBBPDfkm6WdEIu2zIiVgLk9y1y+ThgWWXa5bnMzMy6YKD/D+BNEbFC0hbAHEl/aFJXdcpivUopkZwAsPXWWw8wPDMza2RAVwARsSK/PwD8FNgdWNXbtZPfH8jVlwMTKpOPB1bUmecFETElIqaMGTNmIOGZmVkT/U4AkjaV9PLeYWA/YCEwG5ieq00HLsvDs4Fj8tNAewKP9HYVmZlZ5w2kC2hL4KeSeudzcUT8l6R5wKWSjgfuBQ7L9a8EDgR6gCeA4wawbDMzG6B+J4CIWAK8oU75Q8C+dcoDOLG/yzMzs8HlXwKbmRXKCcDMrFBOAGZmhXICMDMrlBOAmVmhBvpLYDMryIjZF3dluesOPrIry32x8xWAmVmhnADMzArlBGBmVignADOzQjkBmJkVygnAzKxQTgBmZoVyAjAzK5QTgJlZoZwAzMwK5QRgZlYoJwAzs0I5AZiZFcoJwMysUE4AZmaFcgIwMyuUE4CZWaGcAMzMCuUEYGZWKCcAM7NC+Z/CD4Fu/eNsM7O+8BWAmVmhfAVgZsNeN6+q1x18ZNeWPdQ6fgUgaaqkOyX1SDq108s3M7OkowlA0gjgG8ABwI7AEZJ27GQMZmaWdPoKYHegJyKWRMRfgEuAQzocg5mZ0fl7AOOAZZXPy4E9hmphfhrHzAaqW8eRTtx76HQCUJ2yeF4F6QTghPxxraQ7hzyqxkYDD3Zx+a04voFxfAPj+AamaXzi/QOZ9zbtVOp0AlgOTKh8Hg+sqFaIiAuACzoZVCOS5kfElG7H0YjjGxjHNzCOb2CGQ3ydvgcwD5gkaVtJGwPTgNkdjsHMzOjwFUBEPC3pJOAqYAQwMyIWdTIGMzNLOv5DsIi4Eriy08vtp2HRFdWE4xsYxzcwjm9guh6fIqJ1LTMze9Hx3wIyMytUMQmg1Z+gkLSJpB/m8TdKmpjLJ0p6UtKt+XV+ZZpdJd2WpzlHUr3HXIc6vvdXYrtV0jOSJudxc/M8e8dtMYTxvUXSLZKelnRozbjpkhbn1/RKeSfbr258kiZLul7SIkkLJB1eGTdL0j2V9pvc6fjyuHWVGGZXyrfN+8LivG9s3On4JO1Ts//9WdK787hOtt/Jkm7P2/BqSdtUxg2H/a9ufJ3a/xqKiBf9i3TD+W5gO2Bj4PfAjjV1Pgqcn4enAT/MwxOBhQ3mexPw96TfN/wCOKDT8dXU2QlYUvk8F5jSofabCPwdcBFwaKV8c2BJfh+Vh0d1of0axfdaYFIe3gpYCWyWP8+q1u1G++VxaxvM91JgWh4+H/hIN+Kr2dZrgJd1of32qSz3Izz3/R0u+1+j+IZ8/2v2KuUKoJ0/QXEIcGEe/n/Avs3OCCSNBV4REddH2loXAe/ucnxHAD/oZwwDii8ilkbEAuCZmmn3B+ZExJqI+BMwB5ja6fZrFF9E3BURi/PwCuABYEw/4xj0+BrJ2/5tpH0B0r7R8farcSjwi4h4op9xDCS+X1eWewPpN0YwfPa/uvF1aP9rqJQEUO9PUIxrVCcingYeAV6Vx20r6XeSrpH05kr95S3m2an4eh3O+gngu/ny8V8HcInbTnx9nbbT7deSpN1JZ3B3V4rPypfmX5G0SZfie4mk+ZJu6O1eIW37h/O+0J95DmZ8vaax/v7XjfY7nnRG32zabu5/1fieNYT7X0OlJICWf4KiSZ2VwNYRsTNwMnCxpFe0Oc9OxJdGSnsAT0TEwsr490fETsCb8+voIYyvr9N2uv2azyCdEf4ncFxE9J7l/guwA7AbqQvhlC7Ft3WkX4weCXxV0vaDMM+qwWq/nUi/8enV8faTdBQwBfiPFtN2pf3qxNdbPpT7X0OlJICWf4KiWkfShsArgTUR8VREPAQQETeTsvNrc/3xlenrzXPI46uMX+/sKyLuy++PAReTLlWHKr6+Ttvp9msoJ/SfA6dHxA295RGxMpKngO/Snfbr7RogIpaQ7uvsTPobMpvlfaHP8xzM+LL3AT+NiL/2FnS6/SS9HTgNODgvs9m0Hd//GsTXif2vsaG8wTBcXqQfvC0BtuW5mzSvr6lzIs+/yXppHh4DjMjD2wH3AZvnz/OAPXnuJtKBnY4vf96AtBNuVzPP0Xl4I1Jf8YeHKr5K3VmsfxP4HtINuFF5uOPt1yS+jYGrgY/XqTs2vwv4KnB2F+IbBWySh0cDi8k3GIEf8fybwB/tdHyV8huAfbrVfqSkeDf5hupw2/+axDfk+1/T2Ad7hsP1BRwI3JU3wmm57ExSNgZ4Sf5C9ZCeDtgul78XWJQ36i3AuyrznAIszPP8OvmHdZ2ML4/bG7ihZn6bAjcDC3L8XyMnsiGKbzdSEnoceAhYVJn2AznuHtIlbjfar258wFHAX4FbK6/JedyvgNtyjN8DRnYhvjfmGH6f34+vzHO7vC/05H1jky5t34mkE6MNaubZyfb7JbCqsg1nD7P9r258ndr/Gr38S2Azs0KVcg/AzMxqOAGYmRXKCcDMrFBOAGZmhXICMDMrlBOAmVmhnADMzArlBGBmVignADOzQjkBmJkVygnAzKxQTgBmZoVyAjAzK5QTgJlZoZwAzMwK5QRgZlYoJwAzs0I5AZiZFcoJwMysUE4AZmaFcgKwYUXSWknbdXiZL5V0uaRHJP2oH9PvLWn5IMSxVNLbBzqffi57lqTPDcX8Bqt9bPA5AbzISQpJj+cD632SvixpRLfjApA0V9IHq2URMTIilnQ4lEOBLYFXRcRhtSMlzZD019yGayXdIem9HY6xGs/EvF03rCkf1IO4vfg5AZThDRExEtgXOBL4x9oKtQeToaRkOO172wB3RcTTTer8MCenkcDHge9J2rIz4Q0vndxXbGgNpy+hDbGI+APwW+Bv4dkuh1MkLQAel7ShpNflM/OHJS2SdHDv9PkM83xJcyQ9JukaSdtUxr9R0rzclTJP0hsr4+ZKOkvSdcATwH8Cbwa+ns+qv57rhaTX5OFXSrpI0mpJf5R0em/ikHSspGslfVHSnyTdI+mARuveaL0kfQb4N+DwHMfxbbTjVcBjwPYNlnWqpLtzG90u6T014/8xX0X0jt+lzjx2yOs0rVU8DWI4VtJ1kr6S13lJ3j7HSlom6QFJ02smG91k24akEyUtBhZXYpwjaY2kOyW9r83YGraPpNfkZT8i6UFJP+zP+lubIsKvF/ELCOA1eXhH4H7g+Px5KXArMAF4KbAR0AN8GtgYeBvpQPc3uf6s/PktwCbA14Br87jNgT8BRwMbAkfkz6/K4+cC9wKvz+M3ymUfbBLvRcBlwMuBicBdldiPBf5KupoZAXwEWAGoThu0Wq8ZwPeatOGz4wEB7wQeBjbLZXsDyyv1DwO2Ip1gHQ48DoytjLsP2C3P6zXANpXt8XZgl9xWBzWIZ2Jupw1rymcBn6u0z9PAcbl9Ppfn+Y287fbLbTCy1batbJc5eTu/FNgUWJbnv2GO+UHg9XVi6Uv7/AA4LY97CbBXt79DL+ZX1wPwa4g3cPriPko6GN+dDwQb5HFLgQ9U6r6ZlCA2qJT9AJiRh2cBl1TGjQTWkRLI0cBNNcu+Hjg2D88FzqwZP5cGCSAftJ4CdqyM+xAwNw8fC/RUxr0sT/vqOm3Qar1m0DoB/IV00H8ir/OnKuOfd4BV4J5/AAADMElEQVSrM/2twCF5+CrgYw3qLQU+AywH9mkyv4m0lwAWV8btlKfZslL2EDC51batbJe3VcYfDvy2ZvnfBM6oE0tf2uci4AJgfLe/OyW83AVUhl0iYlREbB8Rp0fEM5VxyyrDWwHLasb/ERhXr35ErAXW5Om2ynWrGk7bhtGks/XqPGvnd38llify4Mg682pnvVq5NCI2i4iXkbp+jpH0oXoVJR0j6dbc9fIwqcttdB49gZSIG/kw8D8R8esmdXrvVWxUU74R6aqo16rK8JMAEVFbVm2vRtt2vfGk+yZ79K5jXs/3A69uEjfQsn0+Rboyuil31X2g1fys/5wALCrDK4AJNTdotyZ1WfSa0DsgaSSpS2BFfm3D89VOGzXjaz9XPUg6mFXnWTu/drWzXm2LiKXAL4B31Y7L/ebfAk4idX9tBiwkHdQgHUTr3jvIPgxsLekrTeqsJLXNxJrybVk/CfdFo23bq7q9lgHX5KTY+xoZER9ptoBW7RMR90fEP0bEVqQrvnN77wnZ4HMCsKobSf2xn5K0kaS9SQe5Syp1DpS0l6SNgc8CN0bEMuBK4LWSjsw3kw8n3XO4osnyVgF1n/mPiHXApcBZkl6eDxwnA98bovVqm6TxwFRgUZ3Rm5IOlKtz3ePIN92zbwOflLSrktdUb7aS+uGnAm+RdHa95ee2+TGpbV6V1+kIUnv/oj/rlDXatvVcQdreR+flbyRpN0mva7GMpu0j6bDcvpC6LYPUFWVDwAnAnhURfwEOBg4gnYGfCxwT6emhXhcDZ5C6B3YlXfYTEQ8BBwGfIPUtf4p0E/PBJov8GnBofornnDrj/xfpwL0EuDYve+YQrVcrvU8JrQXmAdeR+utrl3U78CXS/Y9VpL736yrjfwScldflMeBnpDPt6jweBt4BHCDpsw3i+ShpGywAHiCdUb+zpounr+pu23oi4jHSjeRppKuE+4HPk24gN9SqfUg3x2/M7TybdL/knn6uj7WgiGZX4WbPkTSLdDPv9G7HYmYD5ysAM7NCOQGYmRXKXUBmZoXyFYCZWaGcAMzMCuUEYGZWKCcAM7NCOQGYmRXKCcDMrFD/H8/DLO8SoRKYAAAAAElFTkSuQmCC
+"
+>
+</div>
+<p>
+    The proportion of black umbrellas for this process would come out somewhere around 13% and you could say that you were 95% confident that the actual value was between 8.5% and 18%.
+    <br>
+    <br>
+    Which would mean... <strong>You just did it!</strong>
+    <br>
+    <br>
+    From the sample that you took you could say that you estimated that 13% of all people in Vancouver carried black umbrellas and you were 95% confident that the actual value fell somewhere between 8.5% and 18%.
+    Pretty neat, huh?
+</p>
+<h3>How to Use Bootstrapping</h3>
+<p>
+    Obviously if you actually did what was described above it would take FOREVER.
+    But with developments in computing/programming, this is actually very quickly calculated (took me about 10min to get the code right, including making the graph look pretty!)
+    <br>
+    <br>
+    The potential applications for bootstrapping don't just apply to estimating the mean of a population.
+    One of our class instructors suggests that <strong>bootstrapping can be used as a substitute for any statistical test</strong> that we would use in traditional statistics to talk about populations.
+    This includes t-tests, F-tests, chi-squared - you name it, apparently we can do it with bootstrapping.
+    Bootstrapping becomes particularly interesting if we recognize that all of those traditional statistical tests have specific assumptions associated with them.
+    If your data doesn't align with those assumptions, the conclusions you draw from those tests run the risk of being wrong.
+    Apparently, with bootstrapping and confidence intervals/hypothesis testing we can get around a lot of these issues.
+    <br>
+    <br>
+    I don't yet know enough to fully explain how all of this works (I've applied it to what would be done for t-testing), but I do find the idea fascinating.
+</p>
+<h3>Questions about Bootstrapping</h3>
+<p>
+    But as usual, the more you know, the more you discover what you do not know.
+    So here are some things that I don't know that I would be very interested in finding out:
+    <br>
+    <ol>
+        <li>Are there any circumstances where we would consider the standard statistical tests to be better/faster than bootstrapping?</li>
+        <br>
+        <li>How is the use of bootstrapping seen in academic/publication circles that would like reports of F/t statistics, p values and other such things? </li>
+        <br>
+        <li>So far we've been looking at pair-wise comparisons, but some of the tests I've enjoyed in traditional statistics are ANOVAs, to help answer questions like, "Is there any point in analyzing the pair-wise comparisons for this information?" I get that even if we do get a statistically significant result from something like a two-way ANOVA we still have to do the pair-wise comparisons to confirm the interpretations, but do we just do all of the pair-wise comparisons from a bootstrapping perspective and see what comes out? How does this relate to things like the Bonferroni correction of reducing the p value for a single test to reduce Type I errors?</li>
+        <br>
+        <li>Are there any good resources that help to easily compare between what would have been done in traditional statistical tests and what we would do instead for bootstrapping? And any discussion about the limitations/benefits of each?</li>
+        <br>
+        <li>Finally, when it comes to research, does the use bootstrapping suggest that we can take smaller sample sizes than we would have with traditional statistical research? Or do the same considerations of wanting to have some kind of realistic representation of the population still apply with bootstrapping?</li>
+    </ol>
+    <br>
+    So many new things to discover!
+</p>
+</article>
