@@ -37,9 +37,9 @@ title: What is a p-value
     (A Type I error is when you incorrectly reject the null hypothesis - usually we would consider making Type I errors to be 'bad,' so we want to make as few of them as possible, and so are happy to err on the side of caution and make this chance quite low)
 </p>
 <p>
-    A low p-value is often considered to be less than 0.05 in business and research and 0.01 in medicine, but it could be any value appropriate to the situation.
+    A low p-value is often considered to be less than 0.05 in business and research, and 0.01 in medicine, but it could be any value appropriate to the situation.
     That is, if you get a p-value that is 0.05, this means that there is a 5% chance that a statistic that you observed came from a population where the null hypothesis is true.
-    With this reasoning, at low p-values we typically reject the null hypothesis and accept the alternate hypothesis. That is, we act on the assumption that the observed statistic came from a population where the alternate hypothesis is true.
+    With this reasoning, at low p-values we typically reject the null hypothesis. That is, we act on the assumption that the observed statistic came from a population where the alternate hypothesis is true.
 </p>
 <p>
     In standard methodology we don't just calculate the p-value and decide if it's low enough, we pick a threshhold beforehand (a priori - <em>sister wave</em>!), which is called the α level/value.
@@ -68,7 +68,7 @@ title: What is a p-value
 </p>
 <h4>Simulating the Population</h4>
 <p>
-    To note, when conducting hypothesis testing, <strong>we always simulate the null population</strong>.
+    To note, when conducting hypothesis testing, <strong>we always simulate the null population</strong> and then <strong>compare to the observed statistic<mean>.
 </p>
 <p>
     To do this, we reference the null hypothesis. As we discussed above, the general null hypothesis is that there is no difference.
@@ -83,7 +83,7 @@ title: What is a p-value
 >
 </div>
 <p>
-    The aqua space show the spread of all of the differences in IQ between siblings that would be seen if the null hypothesis is true (the null population) and the blue dashed line show the null mean (0).
+    The aqua space shows the spread of all of the differences in IQ between siblings that would be seen if the null hypothesis is true (the null population), and the blue dashed line shows the null mean (0).
     We can use this distribution to help us calculate our p-values.
 </p>
 
@@ -94,7 +94,7 @@ title: What is a p-value
     To test if eldest siblings have higher IQs, we would set up our hypotheses like this:
 </p>
 <p>
-    <strong>H<sub>0</sub>:</strong> μ<sub>eldest</sub> - μ<sub>non-eldest</sub> <= 0
+    <strong>H<sub>0</sub>:</strong> μ<sub>eldest</sub> - μ<sub>non-eldest</sub> ≤ 0
     <br>
     <strong>H<sub>1</sub>:</strong> μ<sub>eldest</sub> - μ<sub>non-eldest</sub> > 0
 </p>
@@ -131,7 +131,8 @@ title: What is a p-value
 </p>
 <code>p_val = (dist > 1.4).mean()</code><br><br>
 <p>
-    This compares each value in the distribution to 1.4 and creates an array of these comparisons.
+    This compares each value in the distribution to 1.4 and creates an array of these comparisons
+    (For each comparison, if the null value is greater than the observed statistic, the result will be <em>True</em>, if not, it will be <em>False</em>).
     When calculating the mean, comparisons that were <em>True</em> are evaluated as 1 and comparisons that were <em>False</em> are evaluted as 0.
 </p>
 <p>
@@ -156,7 +157,7 @@ title: What is a p-value
     So this time we are looking at if eldest siblings have lower IQs, we would set up our hypotheses like this:
 </p>
 <p>
-    <strong>H<sub>0</sub>:</strong> μ<sub>eldest</sub> - μ<sub>non-eldest</sub> >= 0
+    <strong>H<sub>0</sub>:</strong> μ<sub>eldest</sub> - μ<sub>non-eldest</sub> ≥ 0
     <br>
     <strong>H<sub>1</sub>:</strong> μ<sub>eldest</sub> - μ<sub>non-eldest</sub> < 0
 </p>
@@ -170,7 +171,7 @@ title: What is a p-value
 </p>
 <h4>Calculation</h4>
 <p>
-    For the sake of simplicity, let's keep all of the previous values the same - the average difference for the null hypothesis is 0, the standard deviation of the distribution is 0.75 and the difference in IQ that is observed between eldest children and their siblings for our sample is 1.4.
+    For the sake of simplicity, let's keep all of the previous values the same - the average difference for the null hypothesis is 0, the standard deviation of the sampling distribution is 0.75, and the difference in IQ that is observed between eldest children and their siblings for our sample is 1.4.
     The chart will therefore look exactly the same:
 </p>
 <div>
@@ -182,7 +183,7 @@ title: What is a p-value
     But, because of our change in the hypotheses, what we calculate for the p-value will be different.
 </p>
 <p>
-    This time, because the alternate hypothesis talks about less than the null (with the tail of the sign pointing to the left), the area that we are going to calculate is everything shaded aqua that is to the left of the red line, or the proportion of values from our null distribution that are less than the observed mean.
+    This time, because the alternate hypothesis talks about "less than 0" (with the tail of the sign pointing to the left), the area that we are going to calculate is everything shaded aqua that is to the left of the red line, or the proportion of values from our null distribution that are less than the observed mean.
 </p>
 <p>
     To do this, we switch the direction of the sign in our code:
@@ -195,11 +196,11 @@ title: What is a p-value
 <p>Again, when we look at how much aqua is to the left of the red line, this seems to make sense.</p>
 <p>As a side note, because all we did was switch the signs, the total of this and the previously calculated p-value is zero.</p>
 <h4>Conclusion</h4>
-<p>This p-value is WELL above our previously established  αα  level and so in this case we would fail to reject the null hypothesis.</p>
+<p>This p-value is WELL above our previously established α level and so in this case we would fail to reject the null hypothesis.</p>
 <p>Our conclusion would be, "<strong>On average, the IQ of eldest children is greater than or equal to that of their younger siblings.</strong>"</p>
 
 <h3>Hypotheses Version 3: There is a difference in the IQs of eldest children and their younger siblings</h3>
-<p>Note that what is particular about this hypothesis is that a direction isn't specified, we are only looking for a difference, the difference could be higher or lower and so we will need to consider that in our calculations.</p>
+<p>Note that what is particular about this hypothesis is that a direction isn't specified, we are only looking for a difference. The difference could be higher or lower, and so we will need to consider that in our calculations.</p>
 <h4>Hypotheses</h4>
 <p>
     <strong>H<sub>0</sub>:</strong> μ<sub>eldest</sub> - μ<sub>non-eldest</sub> = 0
@@ -286,7 +287,7 @@ title: What is a p-value
 <p>
     Here's where things can get interesting.
     When we are doing null hypothesis statistical testing (NHST) people can get very focused on p-values.
-    A result being significant is everything, and if the result is not significant, the worked is often put to the side.
+    A result being significant is everything, and if the result is not significant, the work is often put to the side.
 </p>
 <p>
     But p-values are not the only things that we should consider in reality.
@@ -295,11 +296,11 @@ title: What is a p-value
     <strong>Would you include questions of sibling order in your hiring process to give you a better chance of hiring a more intelligent workforce?</strong>
 </p>
 <p>
-    If you look at the size of the difference (called effect size), we're talking about less than 2 points of difference in IQ.
-    Can you imagine the potential lawsuits that could be directed towards your company if you declined to hire someone because they weren't an older sibling?
+    If you look at the size of the difference (called effect size), we're talking about less than 2 points of difference in IQ (In a range for most people that is 70 to 130).
+    Can you imagine the lawsuits that could be directed towards your company if you declined to hire someone because they weren't an older sibling?
     In fact, <a href="https://www.independent.co.uk/news/science/personality-traits-not-affected-by-individuals-birth-order-position-new-research-finds-a6700896.html rel="noopener noreferrer" target="_blank"">this article</a> suggests that in 4 out of 10 cases, the later-born is still smarter than their older sibling.
     That's an awful lot of potential lawsuits for what would seem to be a very tiny potential increase in productivity.
-    It would seem that the potential downfalls associated with making decisions based on this information would be MUCH greater than not using this information.
+    It would seem that the downfalls associated with making decisions based on this information would be MUCH greater than not using this information.
 </p>
 <p>
     This is why our instructor encourages us to consider not just statistical significance but also practical significance of our hypothesis testing.
