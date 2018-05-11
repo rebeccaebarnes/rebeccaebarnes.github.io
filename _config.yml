@@ -1,5 +1,6 @@
 name: Pursuing Data
 url: https://rebeccaebarnes.github.io/
+timezone: Canada/Pacific
 plugins:
     - jekyll-feed
     - jekyll-seo-tag
