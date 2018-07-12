@@ -191,7 +191,7 @@ title: Exploring Data
     <p style="color:#2b5588;">
         My pairwise plotting looked like this:
     </p>
-    <img class="centre-img" src="/img/explore-images/pair-wise.png" alt="pairwise plot">
+    <img src="/img/explore-images/pair-wise.png" alt="pairwise plot">
     <p style="color:#2b5588;">
         I went through each column and then moved down row by row and made some basic observations about what I saw for each cell.
         This may not be 100% necessary but it did give me a good handle on what to expect from the data.
@@ -235,14 +235,14 @@ title: Exploring Data
         My first plot used color with a bar chart to show candidate alignment (categorical variable) with the value of the contributions (numerical variable) that they received.
         "Value of contributions per candidate" was one variable, and "candidate political alignment" was the other.
     </p>
-    <img class="centre-img" src="/img/explore-images/contrb-align.png" alt="contribution color bar chart">
+    <img src="/img/explore-images/contrb-align.png" alt="contribution color bar chart">
     <p style="color:#2b5588;">
         I wanted to look at the distribution of contributions as well as the total candidates.
         To do this I plotted a series of boxplots.
         The first showed there were some outliers for one of the candidates and so I did a second plot to limit that and get a better look at the majority of the data.
     </p>
-    <img class="centre-img" src="/img/explore-images/contrb-cand-distribution.png" alt="distribution of candidate contributions boxplot">
-    <img class="centre-img" src="/img/explore-images/sml-contrb-cand.png" alt="candidate contribution distribution color">
+    <img src="/img/explore-images/contrb-cand-distribution.png" alt="distribution of candidate contributions boxplot">
+    <img src="/img/explore-images/sml-contrb-cand.png" alt="candidate contribution distribution color">
     <p style="color:#2b5588;">
         As you will notice, I snuck colour into this one.
         Technically this is three variables - there is the candidate name (x-axis), the contributions received (y-axis), and the political alignment of the candidate (colour).
@@ -254,7 +254,7 @@ title: Exploring Data
         In this example you can see a plot of contribution timing by election time.
         By the color for election type I have already added a variable and so just plotted counts instead of values of the contributions.
     </p>
-    <img class="centre-img" src="/img/explore-images/contrb-election.png" alt="contributions by election freq poly">
+    <img src="/img/explore-images/contrb-election.png" alt="contributions by election freq poly">
 
     <h4>Building on Plots</h4>
     <p>
@@ -268,7 +268,7 @@ title: Exploring Data
         When I wanted to do the bivariate analysis, I now used a line chart of weekly contribution totals (the same bin width that I'd used for the frequency polygon).
         If you scroll back up, you can compare the similarities and differences between the two plots.
     </p>
-    <img class="centre-img" src="/img/explore-images/contrb-time.png" alt="contributions over time line chart">
+    <img src="/img/explore-images/contrb-time.png" alt="contributions over time line chart">
 
     <h4>Displaying Size</h4>
     <p>
@@ -282,7 +282,7 @@ title: Exploring Data
         I added an alpha level to the points so that a single contribution was very light, but many contributions layered on top of each other would be very dark.
         You can clearly see the areas of concentrated contributions.
     </p>
-    <img class="centre-img" src="/img/explore-images/contrb-geog.png" alt="contributions values map">
+    <img src="/img/explore-images/contrb-geog.png" alt="contributions values map">
     <p>
         Another way that I can build on plots is also to explore means and medians.
         Totals can give you the overall picture, but means and medians can give you information about the 'typical' values.
@@ -290,7 +290,7 @@ title: Exploring Data
     <p>
         In this case, I plotted them both on the same chart to compare how the peaks changed.
     </p>
-    <img class="centre-img" src="/img/explore-images/mean-median-time.png" alt="mean median of contributions over time">
+    <img src="/img/explore-images/mean-median-time.png" alt="mean median of contributions over time">
     <h4>Scatterplots & Regression Lines</h4>
     <p>
         Scatterplots are specifically used for plotting the relationship between two numerical variables.
@@ -311,7 +311,7 @@ title: Exploring Data
         In my case, I originally plotted the contribution and vote count variables, realized they both needed to be transformed, and did that.
         I was planning on using the data for predictions, so when I added the regression line I added the error spread because I wanted to see how it varied across the range of data, but it's not required.
     </p>
-    <img class="centre-img" src="/img/explore-images/scatterplot.png" alt="mean median of contributions over time">
+    <img src="/img/explore-images/scatterplot.png" alt="mean median of contributions over time">
 
     <h4>Summary</h4>
     <p>
@@ -338,7 +338,7 @@ title: Exploring Data
     <p style="color:#2b5588;">
         One example of this from the project is adding election type with the value of contributions over time, and political alignment.
     </p>
-    <img class="centre-img" src="/img/explore-images/facet-plot.png" alt="facet of contributions over time">
+    <img src="/img/explore-images/facet-plot.png" alt="facet of contributions over time">
     <p style="color:#2b5588;">
         I originally created the plot with the colours for the political alignments and then wanted to see how election type impacted the lines.
         When the two plots are side by side it became clear that contributions were made at different times.
@@ -347,7 +347,7 @@ title: Exploring Data
         Just for repetition's sake, here's another faceted plot that I used, this time with scatterplots.
         When I'm doing this faceting, I compare how the slopes of the lines differ between each other, and what that means for the relationships between the variables.
     </p>
-    <img class="centre-img" src="/img/explore-images/facet-scatter.png" alt="facet of scatterplots">
+    <img src="/img/explore-images/facet-scatter.png" alt="facet of scatterplots">
     <p style="color:#2b5588;">
         Here's what I said:
         <br>
@@ -360,7 +360,7 @@ title: Exploring Data
         I didn't actually facet these and instead just assigned them to variables and arranged them together.
         But the give some sense of what can be done with the various charting tools.
     </p>
-    <img class="centre-img" src="/img/explore-images/pretty-maps.png" alt="maps of political contributions">
+    <img src="/img/explore-images/pretty-maps.png" alt="maps of political contributions">
 
     <h4>Summary</h4>
     <p>
