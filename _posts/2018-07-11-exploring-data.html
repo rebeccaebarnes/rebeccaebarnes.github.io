@@ -135,8 +135,8 @@ title: What am I Supposed to do in EDA?
         For city I used a bar chart for the number of contributions for the top six cities, plotted a histogram of the number of contributions per city for the bottom 75% of cities, and then plotted all of the contributions on a map (using coordinates) to see the spread across the map.
     </p>
     <img class="right-img" src="/img/explore-images/top-cities.png" alt="top cities bar chart">
-    <img class="right-img" src="/img/explore-images/city-hist.png" alt="cities hist plot">
-    <img class="right-img" src="/img/explore-images/city-map.png" alt="city map plot">
+    <img class="right-img" src="/img/explore-images/city-hist.png" height='110%' alt="cities hist plot">
+    <img class="right-img" src="/img/explore-images/city-map.png" height='110%' alt="city map plot">
 
     <h4>Continuous/Numerical Variables</h4>
     <p>
@@ -151,7 +151,7 @@ title: What am I Supposed to do in EDA?
         I plotted a histogram with bin sizes of $5 for the contribution values and plotted the total count votes for the candidates.
         (For candidates, I could have done the distribution of votes per count for each candidate, but this worked best for my purposes)
     </p>
-    <img class="right-img" src="/img/explore-images/cont-hist.png" alt="contributions hist plot">
+    <img class="right-img" src="/img/explore-images/cont-hist.png" height='110%' alt="contributions hist plot">
     <img class="right-img" src="/img/explore-images/vote-bar.png" alt="votes bar plot">
 
     <h4>Date Variables</h4>
@@ -235,7 +235,7 @@ title: What am I Supposed to do in EDA?
         My first plot used color with a bar chart to show candidate alignment (categorical variable) with the value of the contributions (numerical variable) that they received.
         "Value of contributions per candidate" was one variable, and "candidate political alignment" was the other.
     </p>
-    <img src="/img/explore-images/contrb-align.png" alt="contribution color bar chart">
+    <img src="/img/explore-images/contrb-align.png" width='60%' alt="contribution color bar chart">
     <p style="color:#2b5588;">
         I wanted to look at the distribution of contributions as well as the total candidates.
         To do this I plotted a series of boxplots.
@@ -254,7 +254,7 @@ title: What am I Supposed to do in EDA?
         In this example you can see a plot of contribution timing by election time.
         By the color for election type I have already added a variable and so just plotted counts instead of values of the contributions.
     </p>
-    <img src="/img/explore-images/contrb-election.png" alt="contributions by election freq poly">
+    <img src="/img/explore-images/contrb-election.png" width='75%' alt="contributions by election freq poly">
 
     <h4>Building on Plots</h4>
     <p>
@@ -268,7 +268,7 @@ title: What am I Supposed to do in EDA?
         When I wanted to do the bivariate analysis, I now used a line chart of weekly contribution totals (the same bin width that I'd used for the frequency polygon).
         If you scroll back up, you can compare the similarities and differences between the two plots.
     </p>
-    <img src="/img/explore-images/contrb-time.png" alt="contributions over time line chart">
+    <img src="/img/explore-images/contrb-time.png" width='60%' alt="contributions over time line chart">
 
     <h4>Displaying Size</h4>
     <p>
@@ -282,7 +282,7 @@ title: What am I Supposed to do in EDA?
         I added an alpha level to the points so that a single contribution was very light, but many contributions layered on top of each other would be very dark.
         You can clearly see the areas of concentrated contributions.
     </p>
-    <img src="/img/explore-images/contrb-geog.png" alt="contributions values map">
+    <img src="/img/explore-images/contrb-geog.png" width='50%' alt="contributions values map">
     <p>
         Another way that I can build on plots is also to explore means and medians.
         Totals can give you the overall picture, but means and medians can give you information about the 'typical' values.
@@ -290,7 +290,7 @@ title: What am I Supposed to do in EDA?
     <p>
         In this case, I plotted them both on the same chart to compare how the peaks changed.
     </p>
-    <img src="/img/explore-images/mean-median-time.png" alt="mean median of contributions over time">
+    <img src="/img/explore-images/mean-median-time.png" width='70%' alt="mean median of contributions over time">
     <h4>Scatterplots & Regression Lines</h4>
     <p>
         Scatterplots are specifically used for plotting the relationship between two numerical variables.
@@ -311,7 +311,7 @@ title: What am I Supposed to do in EDA?
         In my case, I originally plotted the contribution and vote count variables, realized they both needed to be transformed, and did that.
         I was planning on using the data for predictions, so when I added the regression line I added the error spread because I wanted to see how it varied across the range of data, but it's not required.
     </p>
-    <img src="/img/explore-images/scatterplot.png" alt="mean median of contributions over time">
+    <img src="/img/explore-images/scatterplot.png" width='70%' alt="mean median of contributions over time">
 
     <h4>Summary</h4>
     <p>
