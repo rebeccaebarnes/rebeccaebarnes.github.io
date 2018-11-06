@@ -133,9 +133,9 @@ title: Finding Flowers with Neural Networks
     <p>
         Ok, enough technical details, here's what it actually did!
     </p>
-    <img src="/img/love in the mist_39.png" alt="Flower with prediction">
-    <img src="/img/love in the mist_49.png" alt="Flower with prediction">
-    <img src="/img/love in the mist_185.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/love in the mist_39.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/love in the mist_49.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/love in the mist_185.png" alt="Flower with prediction">
     <p>
         What I find most interesting about this group of flowers is that even at different angles, the predictions for this flower are above 80%.
         However, it looks like most of these images are for older flowers, and the final, seemingly newer bloom is what confuses the algorithm.
@@ -144,33 +144,33 @@ title: Finding Flowers with Neural Networks
     <p>
         I also enjoyed looking at what other flowers were predicted and some of their similarities, and the flow-ons from there:
     </p>
-    <img src="/img/alpine sea holly_62.png" alt="Flower with prediction">
-    <img src="/img/spear thistle_0.png" alt="Flower with prediction">
-    <img src="/img/artichoke_188.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/alpine sea holly_62.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/spear thistle_0.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/artichoke_188.png" alt="Flower with prediction">
     <p>
         I find it both amazing how the predictions seem to be able to pick up the visual similarities between the images (in that these are the next most probable flower types) but also that it can so clearly distinguish between the differences (with high probabilities for each classification)
     </p>
     <p>
         It's also then fascinating to notice when this doesn't happen - when the model can't reliably identify a flower type:
     </p>
-    <img src="/img/yellow iris_33.png" alt="Flower with prediction">
-    <img src="/img/yellow iris_101.png" alt="Flower with prediction">
-    <img src="/img/yellow iris_124.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/yellow iris_33.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/yellow iris_101.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/yellow iris_124.png" alt="Flower with prediction">
     <p>
         It seems like the clarity of the image, the fullness of the image in the frame, and the features that are captured could play a role in accurate detection.
     </p>
     <p>
         Also equally fascintating when seemingly different flowers can all be correctly classified, such as the lenten rose.
     </p>
-    <img src="/img/lenten rose_64.png" alt="Flower with prediction">
-    <img src="/img/lenten rose_79.png" alt="Flower with prediction">
-    <img src="/img/lenten rose_203.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/lenten rose_64.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/lenten rose_79.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/lenten rose_203.png" alt="Flower with prediction">
     <p>
         Well, it does get <em>one</em> wrong. But there's also the primula:
     </p>
-    <img src="/img/primula_88.png" alt="Flower with prediction">
-    <img src="/img/primula_96.png" alt="Flower with prediction">
-    <img src="/img/primula_166.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/primula_88.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/primula_96.png" alt="Flower with prediction">
+    <img class="left-img" src="/img/primula_166.png" alt="Flower with prediction">
     <p>
         To be able to improve the accuracy, I could have trained the algorithm more, but another way that I could have improved it would have been to identify what types of flowers, or image types the algorithm particularly struggled with and find more of those to help it train on.
         I really did enjoy this project - it was an education in both the process of deep learning and the a variety of coding practices required. If you'd like to check it out in more detail, you can head <a href="https://github.com/rebeccaebarnes/DSND-Project-2" rel="noopener noreferrer" target="_blank">here</a>.
