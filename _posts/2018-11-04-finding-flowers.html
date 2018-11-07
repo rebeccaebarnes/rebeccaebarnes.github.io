@@ -47,14 +47,15 @@ title: Finding Flowers with Neural Networks
         It ends up being about what makes the most sense for your curent situation. (And working this out can be somewhat arbitrary)
     </p>
     <p>
-        Oh, also, the technical term for the circles is actaully nodes. So I'm going to start using that term. :)
+        Oh, also, the technical term for the large circles is actaully nodes. So I'm going to start using that term. :)
     </p>
     <h4>The Input Layer</h4>
     <p>
         So here's how it works.
         In this case we can say that we have three details about which we have information on for every data point we have.
         These are out inputs and will be fed into the input layer.
-        The input layer needs to have the same amount of nodes as we have inputs. (Kind of makes sense)
+        Although in this model we have the same number of nodes for the input layer as we do pieces of information, this does _not_ need to be the case.
+        It's possible to have as many nodes as we'd like for the input layer, we just need to have each piece of information feeding into those inputs.
     </p>
     <p>
         When we start out, we will weight each detail as it is fed into the node.
