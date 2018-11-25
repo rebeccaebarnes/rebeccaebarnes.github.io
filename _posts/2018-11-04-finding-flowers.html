@@ -54,23 +54,33 @@ title: Finding Flowers with Neural Networks
         So here's how it works.
         In this case we can say that we have three details about which we have information on for every data point we have.
         These are out inputs and will be fed into the input layer.
-        Although in this model we have the same number of nodes for the input layer as we do pieces of information, this does _not_ need to be the case.
-        It's possible to have as many nodes as we'd like for the input layer, we just need to have each piece of information feeding into those inputs.
+        To be honest, the input layer, as I've described it here, is not like any other layer in the network.
+        It's only job is to collect the inputs.
+        It will always have the same number of nodes as there are data inputs.
+        Normally there are a whole bunch of other things that happen before the data gets passed into a layer, but I'll describe that below.
     </p>
     <p>
         When we start out, we will weight each detail as it is fed into the node.
         Usually, these are just random (but probably close to zero), and we can talk about them existing on the lines, or the edges.
         There is a different weight for each input for each node in the input layer.
     </p>
+
+    <h4>The Hidden Layers</h4>
     <p>
-        At the input layer node we will multiply the input values by the weights on the edges and then do a fancy transformation (called an activation) of the numbers that will convert them (typically) to their equivalent in a range of:
+        After the gathering of the input layer, we then feed the data through the internal network.
+        Each of these is called a hidden layer.
+        When data is passed into a node in the hidden layer, it is weighted (multiplied) by a certain value.
+        Usually, these are just random (but probably close to zero), and we can talk about them existing on the lines, or the edges.
+        There is a different weight for each type of data received by each node.
+    </p>
+    <p>
+        At the node we will multiply the values by the weights on the edges and then do a fancy transformation (called an activation) of the numbers that will convert them (typically) to their equivalent in a range of:
         <ul>
             <li>Between 0 and 1 (sigma/sigmoid)</li>
             <li>Between -1 and 1(tanh), or </li>
             <li>Between 0 and all positive numbers (ReLU)</li>
         </ul>
     </p>
-    <h4>The Hidden Layers</h4>
     <p>
         We will then take these newly calculated values and do the same thing.
         We'll feed the information into the nodes of the next layer (in our case a hidden layer with four nodes), again, multiplying them by random edge weights, and converting them to the new scale.
