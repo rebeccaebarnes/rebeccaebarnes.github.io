@@ -12,13 +12,13 @@ title: Finding Customer Segments
 <img src="/img/children.jpg" alt="Group of school children">
 
     <p>
-        One of the cleverest realizations within marketing was to realize that because there are different types people, they are often served best by different products or variations.
+        One of the cleverest realizations within marketing was to recognize that because there are different types people, they are often served best by different products or variations.
         (If you've never heard Malcolm Gladwell talk about the origin of different types of spaghetti sauce, <a href="https://en.tiny.ted.com/talks/malcolm_gladwell_on_spaghetti_sauce" rel="noopener noreferrer" target="_blank">this</a> is worth reading.)
         Being able to effectively segment your customers can help you better tailor your services to meet their needs or identify areas of the market that you have not yet engaged (or could improve upon your engagement).
         One of the methods that is used in customer segmentation is Principal Component Analysis or PCA.
     </p>
     <p>
-        This was my final project of Term 1 in my Data Scientist Nanodegree and I was super excited ago.
+        This was my final project of Term 1 in my Data Scientist Nanodegree and I was super excited.
         A very long time ago I learnt how to do factor analysis in my statistics classes and while I remembered the basic underlying concepts, I promptly forgot anything to do with how to implement it.
         It's something I have wished I still knew how to do and have been waiting many years for that opportunity, and this project was it!
     </p>
@@ -27,10 +27,10 @@ title: Finding Customer Segments
         PCA operates on an assumption that within a set of data that has many associated features/variables, it is possible to identify a set of underlying, or latent, components that can more simply explain the data.
         In PCA, we take datasets that have many features and see if we can find groups of variables that all 'load' onto a particular component.
         In the case of customer segmentation, we measure a number of different demographic features and then assess which features are more commonly associated with each other.
-        A group of features can often define an identifiable customer segment if we pay attention to which features are loading.
+        A group of features can often define a recognizable customer segment if we pay attention to which features are loading.
     </p>
     <p>
-        This is a whole bunch more math and technical explanation that can be provided here, but as is my usual approach, I like to leave those off for the more conceptual approach!
+        There is a whole bunch more math and technical explanation that can be provided here, but as is my usual approach, I like to leave those off for the more conceptual approach!
     </p>
     <h3>What Did I Do?</h3>
     <p>
@@ -44,21 +44,21 @@ title: Finding Customer Segments
     <p>
         But before we could get to the fun stuff, there was a lot that we needed to do.
         The data was quite messy - real world data normally is.
-        So there were a number of things I needed to do - identify values in each column that actually represented missing data and convert them to nulls, make an assessment of the amount of missing data and its impact on analysis, decide which features to keep and drop, convert categorical variables to binary variables (one-hot encoding), and feature engineer (make new features) some columns that had two different piece of information contained in one.
-        Once this was done, I made decions about what to do with my missing values (drop, or replace with the mean - after standardizing), and standardized the values (convert to a range of around -3 to 3 with a mean of 0, among other things)
+        So I had to - identify values in each column that actually represented missing data and convert them to nulls, make an assessment of the amount of missing data and its impact on analysis, decide which features to keep and drop, convert categorical variables to binary variables (one-hot encoding), and feature engineer (make new features) some columns that had two different piece of information contained in one.
+        Once this was done, I made decisions about what to do with my missing values (I dropped the initial missing values, then for the missing values created through feature engineering, I dropped them to standardize, then imputed the mean), and standardized the values (convert to a range of around -3 to 3 with a mean of 0, among other things)
         As is typically the case, to complete this project I probably spent more than half the time preparing the data compared to computing or analyzing.
     </p>
     <h4>Completing the PCA</h4>
     <p>
         One of the great things about working with Python is that it has libraries that allow the completion of this type of analysis very quickly.
-        (I am gaining increasingly familiarity with sci-kit learn!)
-        In looking at the results of the PCA, what we can get is a presentation that shows us how much relative variance in the data is captured by the component.
+        (I am gaining increasing familiarity with sci-kit learn!)
+        In looking at the results of the PCA, what we can get is a presentation that shows us how much relative variance in the data is captured by each component.
         It would look something like this:
     </p>
     <img class="centre-img" src="/img/pca_full.png" alt="PCA plot of explained variance">
     <p>
-        The way that PCA works is that it will always identify the component that explains the most variance within the data first.
-        It will then find the next component that explains the next highest amount of variance.
+        The way that PCA works is that it will always identify the component that explains the most variance first.
+        It will then find the next component, which will explain the next highest amount of variance.
         That's what you can see in each of the blue bars - the height of each shows the relative amount (out of 100%) of variance that it has captured, and the height decreases slightly with each step.
         In technical terms, it does this by identifying orthogonal vectors. If we were to explain this in 2D space, if you had two vectors (think lines) that were at 90 degrees to each other, they are orthogonal.
         As we add more features, the dimesionality of the space that we are working with increases so it's possible to keep finding many different components that explain variance in the data while still maintaining orthogonality.
@@ -66,8 +66,10 @@ title: Finding Customer Segments
     <p>
         It's a bit hard to really look at the details here, but there are a couple of things that we can see from the outset.
         To capture all of the variance in the data, we needed around 85 components (the final number of features that I used was 92).
-        So if we are really simplifying our data, this isn't really much of a reduction.
-        This is where the curve in our plot can also become useful. We can see that for the first number of components we see a very high increase in explained variance for each component added. Then, around the 5th component, it is less steep (less variance explained per component), and then it really starts to flatten off around the 40 to 50 component mark.
+        So if we are really simplifying our data, this isn't much of a reduction.
+        This is where the curve in our plot can also become useful.
+        We can see that for the first number of components we see a very high increase in total explained variance.
+        Then, around the 5th component, the curve becomes less steep (less variance explained per component), and then it really starts to flatten off around the 40 to 50 component mark.
         To determine how many components to keep, we want to weigh up how much additional variance we are capturing with each new component, while also considering the total amount of variance expalined.
     </p>
     <p>
@@ -90,7 +92,7 @@ title: Finding Customer Segments
     </p>
     <img class="centre-img" src="/img/pca_component_weights.png" alt="First PCA component weights">
     <p>
-        I used a weight of 0.15 (in either direction) as the cutoff for determining the heighest weighted features.
+        I used a weight of 0.15 (in either direction) as the cutoff for determining the highest weighted features.
         I would then inspect these to get an understanding of what underlying component might be captured.
         One thing that you might notice here is that the feature names do not seem to be very interpretable!
         That's because the names are in German!
@@ -178,20 +180,20 @@ title: Finding Customer Segments
     <h4>KMeans Analysis</h4>
     <p>
         This was my final step.
-        Once we'd separated the data into dimenions, we need to collect the data that is found on these dimensions.
+        Once I'd separated the data into dimenions, I needed to collect the data that is found on these dimensions.
         One way to do this is to use the KMeans algorithm that uses the distances between points to find a certain number (K) of clusters within the data.
-        There are a number of ways to decided what K is, but in this case I used what is called an 'elbow plot'.
+        There are a number of ways to decide what K is, but in this case I used what is called an 'elbow plot'.
     </p>
     <img class="centre-img" src="/img/elbow_plot.png" alt="Elbow plot">
     <p>
         This plot shows us the amount of error (SSE) associated with each number of clusters.
         It is preferrable to once again balance the number of clusters with the reduction in error.
-        I chose to use eight clusters because I wanted a few more, based on the segments I had found above, but I think 6 would have also been reasonable.
+        I chose to use eight clusters because I wanted a few more, based on the segments I had found above, but I think six would have also been reasonable.
     </p>
     <p>
-        Once I chose the number of clusters I wanted to find (reminder, this was 8), I then applied all of the steps I had done to the population demographic data to the customer demographic data.
+        Once I chose the number of clusters I wanted to find (reminder, this was 8), I then applied all of the steps I had completed with the population demographic data to the customer demographic data.
         I cleaned the data, standardized it, and used PCA to create the 20 dimensions/components.
-        I then used my KMeans function to predict the label (just 0 to 7) of each data point for both the population and customer data.
+        I then used my KMeans function to predict the label (0 to 7) of each data point for both the population and customer data.
         I also added the missing data that I had excluded back in to create a ninth label.
     </p>
     <p>
@@ -200,15 +202,16 @@ title: Finding Customer Segments
     <img class="centre-img" src="/img/kmeans_comparison.png" alt="Relative proportions of labels">
     <p>
         As you can see, there are some substantial differences in the numbers found in the different labels between the population and customer data.
-        For example, for Label 0, there are much fewer customers than people in the general population. In comparison, there are many <em>more</em> customers with the second (Label 1) when compared to the population.
+        For example, for Label 0, there are much fewer customers than people in the general population.
+        In comparison, there are many <em>more</em> customers with the second cluster (Label 1) when compared to the population.
     </p>
     <p>
         Who are these people, you may be wondering?
         If you are, that's a fantastic question!
     <p>
         To determine this, what I did was compared the feature averages of these groups with what I had found in the PCA analysis.
-        I was able to identify that people that were covered by the first (Label 0) label had characteristics that most matched those of the first component I had found - City-living Youth.
-        The second label (Label 1) mostly closely matched with the "Traditionally German" Elders that I had found!
+        I was able to identify that people that were covered by the first label (Label 0) had characteristics that most matched those of the first component I had found - City-living Youth.
+        The second label (Label 1) most closely matched with the "Traditionally German" Elders that I had found!
     </p>
     <p>
         This makes sense both in terms of how PCA had split out the data, but also makes logical/practical sense.
