@@ -1,0 +1,226 @@
+---
+layout: posts
+title: Finding Customer Segments
+---
+
+<article>
+<header>
+    <h2>{{ page.title }}</h2>
+    <time datetime="2018-11-27T14:10">Nov 27</time>
+</header>
+
+<img src="/img/children.jpg" alt="Group of school children">
+
+    <p>
+        One of the cleverest realizations within marketing was to realize that because there are different types people, they are often served best by different products or variations.
+        (If you've never heard Malcolm Gladwell talk about the origin of different types of spaghetti sauce, <a href="https://en.tiny.ted.com/talks/malcolm_gladwell_on_spaghetti_sauce" rel="noopener noreferrer" target="_blank">this</a> is worth reading.)
+        Being able to effectively segment your customers can help you better tailor your services to meet their needs or identify areas of the market that you have not yet engaged (or could improve upon your engagement).
+        One of the methods that is used in customer segmentation is Principal Component Analysis or PCA.
+    </p>
+    <p>
+        This was my final project of Term 1 in my Data Scientist Nanodegree and I was super excited ago.
+        A very long time ago I learnt how to do factor analysis in my statistics classes and while I remembered the basic underlying concepts, I promptly forgot anything to do with how to implement it.
+        It's something I have wished I still knew how to do and have been waiting many years for that opportunity, and this project was it!
+    </p>
+    <h3>What is PCA?</h3>
+    <p>
+        PCA operates on an assumption that within a set of data that has many associated features/variables, it is possible to identify a set of underlying, or latent, components that can more simply explain the data.
+        In PCA, we take datasets that have many features and see if we can find groups of variables that all 'load' onto a particular component.
+        In the case of customer segmentation, we measure a number of different demographic features and then assess which features are more commonly associated with each other.
+        A group of features can often define an identifiable customer segment if we pay attention to which features are loading.
+    </p>
+    <p>
+        This is a whole bunch more math and technical explanation that can be provided here, but as is my usual approach, I like to leave those off for the more conceptual approach!
+    </p>
+    <h3>What Did I Do?</h3>
+    <p>
+        We were given two datasets from <a href="https://www.arvato.com/en.html" rel="noopener noreferrer" target="_blank">Arvato</a>.
+        One contained demographic data from the general German population, and one contained the same kind of information from a mail-order company.
+        Each original dataset had 85 different features that had been recorded.
+        Obviously that is a lot of features, and just by looking at them all, it would take a <em>lot</em> of data analysis to determine meaningful patterns.
+        Enter PCA!
+    </p>
+    <h4>Data Wrangling</h4>
+    <p>
+        But before we could get to the fun stuff, there was a lot that we needed to do.
+        The data was quite messy - real world data normally is.
+        So there were a number of things I needed to do - identify values in each column that actually represented missing data and convert them to nulls, make an assessment of the amount of missing data and its impact on analysis, decide which features to keep and drop, convert categorical variables to binary variables (one-hot encoding), and feature engineer (make new features) some columns that had two different piece of information contained in one.
+        Once this was done, I made decions about what to do with my missing values (drop, or replace with the mean - after standardizing), and standardized the values (convert to a range of around -3 to 3 with a mean of 0, among other things)
+        As is typically the case, to complete this project I probably spent more than half the time preparing the data compared to computing or analyzing.
+    </p>
+    <h4>Completing the PCA</h4>
+    <p>
+        One of the great things about working with Python is that it has libraries that allow the completion of this type of analysis very quickly.
+        (I am gaining increasingly familiarity with sci-kit learn!)
+        In looking at the results of the PCA, what we can get is a presentation that shows us how much relative variance in the data is captured by the component.
+        It would look something like this:
+    </p>
+    <img class="centre-img" src="/img/pca_full.png" alt="PCA plot of explained variance">
+    <p>
+        The way that PCA works is that it will always identify the component that explains the most variance within the data first.
+        It will then find the next component that explains the next highest amount of variance.
+        That's what you can see in each of the blue bars - the height of each shows the relative amount (out of 100%) of variance that it has captured, and the height decreases slightly with each step.
+        In technical terms, it does this by identifying orthogonal vectors. If we were to explain this in 2D space, if you had two vectors (think lines) that were at 90 degrees to each other, they are orthogonal.
+        As we add more features, the dimesionality of the space that we are working with increases so it's possible to keep finding many different components that explain variance in the data while still maintaining orthogonality.
+    </p>
+    <p>
+        It's a bit hard to really look at the details here, but there are a couple of things that we can see from the outset.
+        To capture all of the variance in the data, we needed around 85 components (the final number of features that I used was 92).
+        So if we are really simplifying our data, this isn't really much of a reduction.
+        This is where the curve in our plot can also become useful. We can see that for the first number of components we see a very high increase in explained variance for each component added. Then, around the 5th component, it is less steep (less variance explained per component), and then it really starts to flatten off around the 40 to 50 component mark.
+        To determine how many components to keep, we want to weigh up how much additional variance we are capturing with each new component, while also considering the total amount of variance expalined.
+    </p>
+    <p>
+        To see this a bit more clearly, I made a 'zoomed in' version of the plot.
+    </p>
+    <img class="centre-img" src="/img/pca_zoom.png" alt="PCA plot of first 20">
+    <p>
+        Now we can see exactly how much variance is explained by each component.
+        If we compare with the larger version, around 20 components there is also a drop-off in the amount of variance explained.
+        At 20 components we have also explained more than 60% of the variance in the data.
+        I didn't want to create <em>too</em> many segments, because no company is going to be able to target them all, but I also wanted to make sure I had captured sufficient variability in the population to comfortably understand what was being captured.
+        Twenty components is what I went with.
+    </p>
+    <p>
+        Once I had decided on the components, then the <em>real</em> fun could begin!
+        For the first ten components I plotted out the weights of each of my 92 features.
+        If a feature is weighted more highly, it is more commonly associated with that component.
+        It is possible for features to weight either positively or negatively.
+        Both 'high' positive and negative values are of interest. (Negative just means that that component is most commonly low)
+    </p>
+    <img class="centre-img" src="/img/pca_component_weights.png" alt="First PCA component weights">
+    <p>
+        I used a weight of 0.15 (in either direction) as the cutoff for determining the heighest weighted features.
+        I would then inspect these to get an understanding of what underlying component might be captured.
+        One thing that you might notice here is that the feature names do not seem to be very interpretable!
+        That's because the names are in German!
+        So a lot of consultation with the data dictionary that we were provided was necessary to understand what I was looking at!
+    </p>
+    <p>
+        Before we go any further, you've got a bit of a chance to "play along at home."
+        If you'd like to use the information I've provided below to make your own guesses about what is captured by this component, click this button once to hide my answer.
+        (Once you've made your guess, you can click it again to see what I suggested, the answer will be shown under "My Answer")
+    </p>
+    <button onclick="myFunction()">Click ONCE to hide my answer before scrolling further!</button>
+    <p>
+        Here's what I found (data is for adults):
+        <ul>
+            <li>High Positive Features
+                <ol>
+                    <li>FINANZ_MINIMALIST (Low financial interest)</li>
+                    <li>MOBI_REGIO (Movement patterns)</li>
+                    <li>PLZ8_ANTG3 (Number of 6-10 family houses in PLZ8 region)</li>
+                    <li>PLZ8_ANTG4 (Number of 10+ familiy houses in PLZ8 region)</li>
+                    <li>ORTSGR_KLS9 (Size of community)</li>
+                    <li>EWDICHTE (Density of households per square kilometer)</li>
+                </ol>
+            <li>High Negative Features
+                <ol>
+                    <li>KBA05_ANTG1 (Number of 1-2 family houses in the microcell)</li>
+                    <li>PLZ8_ANTG1 (Number of 1-2 family houses in the PLz8 region)</li>
+                    <li>KBA05_GBZ (Number of buildings in the microcell)</li>
+                    <li>HH_EINKOMMEN_SCORE (Estimated household net income)</li>
+                    <li>WEALTH (High negative: more likely poor)</li>
+                    <li>FINANZ_SPARER (Financial typology: Money saver)</li>
+                    <li>ALTERSKATEGORIE_GROB (Estimated age based on given name analysis)</li>
+                </ol>
+        </ul>
+    </p>
+    <p>
+        High positive means that these features are likely to be high for this component.
+        High negative means that these features are likely to be low for this component.
+        If we assume that each component represents a certain demographic group within the population, what population group does this sound like to you?
+    </p>
+    <p>
+        <strong>My Answer:</strong>
+    <div id="myDIV">
+        City-living (poor) youth
+    </div>
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    </script>
+    <p>
+        Was your answer close to mine? To me, these sounded like young, college-aged students who are living in city apartments.
+        They don't have that much money and they ended up moving along.
+        They either don't have much interest in financial matters at the moment or are not very interested in saving.
+    </p>
+    <p>
+        I found it so cool to be able to use these components to successfully identify segments of the population that others could recognize!
+    </p>
+    <p>
+        Here are other population segments that I found:
+        <ul>
+            <li>"Traditionally German" Elders</li>
+            <li>Savvy Male Investors</li>
+            <li>"Alternative" Rich Adults/Couples</li>
+            <li>Working Class Families (with children)</li>
+            <li>Affluent Families (with children)</li>
+            <li>Wealthy Professionals (with titles)</li>
+            <li>Working-Class "Newcomers"</li>
+            <li>"Newcomer" Elders</li>
+            <li>"Newcomer" Families (with children)</li>
+        </ul>
+    </p>
+    <p>
+        If you're wondering about the "newcomer" designation, one of the features measured the likelihood of the name being "German-sounding", "Foreign-sounding" or "Assimilated".
+        The last three components we all highly positively loaded with names that sounded foreign or assimilated, and negatively loaded with names that sounded German.
+    </p>
+    <p>
+        You would think with all the work that we have done up until this point we would be finished, but there is <em>one</em> more step to go - stay with it!
+    </p>
+    <h4>KMeans Analysis</h4>
+    <p>
+        This was my final step.
+        Once we'd separated the data into dimenions, we need to collect the data that is found on these dimensions.
+        One way to do this is to use the KMeans algorithm that uses the distances between points to find a certain number (K) of clusters within the data.
+        There are a number of ways to decided what K is, but in this case I used what is called an 'elbow plot'.
+    </p>
+    <img class="centre-img" src="/img/elbow_plot.png" alt="Elbow plot">
+    <p>
+        This plot shows us the amount of error (SSE) associated with each number of clusters.
+        It is preferrable to once again balance the number of clusters with the reduction in error.
+        I chose to use eight clusters because I wanted a few more, based on the segments I had found above, but I think 6 would have also been reasonable.
+    </p>
+    <p>
+        Once I chose the number of clusters I wanted to find (reminder, this was 8), I then applied all of the steps I had done to the population demographic data to the customer demographic data.
+        I cleaned the data, standardized it, and used PCA to create the 20 dimensions/components.
+        I then used my KMeans function to predict the label (just 0 to 7) of each data point for both the population and customer data.
+        I also added the missing data that I had excluded back in to create a ninth label.
+    </p>
+    <p>
+        Then, I compared the relative proportions of each label between the population and the customer data.
+    </p>
+    <img class="centre-img" src="/img/kmeans_comparison.png" alt="Relative proportions of labels">
+    <p>
+        As you can see, there are some substantial differences in the numbers found in the different labels between the population and customer data.
+        For example, for Label 0, there are much fewer customers than people in the general population. In comparison, there are many <em>more</em> customers with the second (Label 1) when compared to the population.
+    </p>
+    <p>
+        Who are these people, you may be wondering?
+        If you are, that's a fantastic question!
+    <p>
+        To determine this, what I did was compared the feature averages of these groups with what I had found in the PCA analysis.
+        I was able to identify that people that were covered by the first (Label 0) label had characteristics that most matched those of the first component I had found - City-living Youth.
+        The second label (Label 1) mostly closely matched with the "Traditionally German" Elders that I had found!
+    </p>
+    <p>
+        This makes sense both in terms of how PCA had split out the data, but also makes logical/practical sense.
+        The customers we were looking at were customers of a mail-order company.
+        Based on what you know about college-aged youth, it seems reasonable that they would be less likely to be customers of a mail-order company.
+        By contrast, it also seems reasonable that older folks are more likely to be customers of this more traditional version of shopping.
+    </p>
+    <h3>Wrapping Up</h3>
+    <p>
+        And that, my friends, is PCA!
+        It was an incredible amount of work to get this done, but I really enjoyed watching the data come alive with the analysis.
+        One of the other applications of PCA is to use it to verify that surveys are actually measuring the underlying constructs that they are intending to measure.
+        This is what I was doing when I originally learnt factor analysis (the statistical equivalent of PCA) and I look forward to trying it out one day!
+    </p>
+</article>
