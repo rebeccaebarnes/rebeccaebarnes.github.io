@@ -5,4 +5,4 @@ _site
 test/index.html
 test
 env
-webapp/worldbankapp/__pycache__
+webapp/*/__pycache__
