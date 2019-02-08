@@ -4,3 +4,4 @@ timezone: Canada/Pacific
 plugins:
     - jekyll-feed
     - jekyll-seo-tag
+htmlwidgets: TRUE
