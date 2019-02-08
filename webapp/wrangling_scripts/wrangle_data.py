@@ -49,7 +49,7 @@ def return_figures():
     df = cleandata("data/API_AG.LND.ARBL.HA.PC_DS2_en_csv_v2.csv")
     df.columns = ["country", "year", "arable_land_perperson_ha"]
     df.sort_values("arable_land_perperson_ha", ascending=False, inplace=True)
-    countrylist = df.country.unique.tolist()
+    countrylist = df.country.unique().tolist()
 
     for country in countrylist:
         # For plotly visualizations, values must be in a list
@@ -61,7 +61,7 @@ def return_figures():
         )
     
     layout_one = {
-        "title": "Change in Hectares of Arable Land\n per Person 1990 to 2015",
+        "title": "Change in Hectares of Arable Land <br> per Person 1990 to 2015",
         "xaxis": {
             "title": "Year",
             "autotick": False,
@@ -101,7 +101,7 @@ def return_figures():
         )
     
     layout_three = {
-        "title": "Percentage of Population that is Rural /n from 1990 to 2015",
+        "title": "Percentage of Population that is Rural <br> from 1990 to 2015",
         "xaxis": {
             "title": "Country",
             "autoticks": False,
@@ -115,7 +115,7 @@ def return_figures():
     # Fourth chart shows rural population vs arable land
     graph_four = []
 
-    valuevariables = [str(x) for x in range(1990, 2016)]
+    valuevariables = [str(x) for x in range(1995, 2016)]
     keepcolumns = [str(x) for x in range(1995, 2016)]
     keepcolumns.insert(0, "Country Name")
 
@@ -142,11 +142,11 @@ def return_figures():
 
         graph_four.append(
             go.Scatter(x=x_val, y=y_val, mode="markers", text=text, 
-                       name=country, textposition="top")
+                       name=country, textposition="top center")
         )
     
     layout_four = {
-        "title": "Rural Population versus \n Forested Area (Square Km) 1990-2015",
+        "title": "Rural Population versus <br> Forested Area (Square Km) 1990-2015",
         "xaxis": {"title": "Rural Population"},
         "yaxis": {"title": "Forest Area (sq. km)"},
     }
@@ -154,7 +154,7 @@ def return_figures():
     # Fifth chart shows the rural population in 2015
     graph_five = []
 
-    df = cleandata("data/PI_SP.RUR.TOTL_DS2_en_csv_v2_9914824.csv")
+    df = cleandata("data/API_SP.RUR.TOTL_DS2_en_csv_v2_9914824.csv")
     df.columns = ["country", "year", "rural_population"]
     df.sort_values("rural_population", ascending=False, inplace=True)
 
