@@ -1,0 +1,104 @@
+---
+layout: posts
+title: Python for SQL Developers&#58 Getting Started
+---
+
+<article>
+<header>
+    <h2>{{ page.title }}</h2>
+    <time datetime="2019-08-25T16:37">Aug 25</time>
+</header>
+
+<img src="/img/guy_screen.jpg" alt="Man with virtual screen">
+
+    <p>
+        It has apparently been a REALLY long time since I wrote a blog post.
+        I guess I've been busy! These days I work with a data analytics and integration team that primarily uses SQL.
+        I wasn't super great at SQL when I started this position, but I've gotten better over the last few months.
+    </p>
+    <p>
+        One of the things that has helped is recognizing that most of what I want to write in SQL, I can write in Python with the help of pandas. So I thought it could be fun to write about it - what's common between Python and SQL and what's not, and especially when using pandas, how the transition distance is not that far!
+    </p>
+    <h3>Installing Python</h3>
+    <p>
+        First things first, if you're wanting to really understand what's going on, the best thing to do is to actually write Python. I like installing Python via the via <a href="https://www.anaconda.com/distribution/#download-section">Anaconda</a>. (Don't forget to select the correct operating system for download - it defaults to macOS). In addition to installing Python it will give you access to Jupyter Notebooks (which I'll talk about later) as well as some IDEs and even RStudio if you want it.
+    </p>
+    <p>
+        <strong>Hint for Windows users:</strong> at some point during the installation you'll encounter a screen with an option to <em>Add Anaconda to my PATH environment variable</em>. The prompt on the screen suggests that it is not recommended. However, if you check the box, you won't have to fuss around with PATH issues afterwards. And I've never had it cause problems with uninstalling and reinstlling Anaconda.  It's up to you! (If you decide not to check the box, you could check out <a href="https://medium.com/@GalarnykMichael/install-python-on-windows-anaconda-c63c7c3d1444" rel="noopener noreferrer" target="_blank">this post</a> for some tips on how to manage the PATH issues)
+    </p>
+    <h3>Using Jupyter Notebooks</h3>
+    <h4>Opening Your First Notebook</h4>
+    <p>
+        It's quite possible I'll write an entire post on this at some point, but Jupyter Notebooks can make your introduction to using Python even easier. You can open it a bunch of ways:
+        <ol>
+            <li>Search for the Anaconda Navigator program. When it opens up the notebook option will be the second one you see. (You can also use the JupyterLab, which is the first option and has some great features but the notebook is fine for now)</li>
+            <img class="centre-img" src="/img/anaconda_suite.PNG" alt="Anaconda Navigator">
+            <li>Search for the Jupyter Notebook program and open it up direclty. (I've actually saved this as a shortcut on my Start menu)</li>
+            <li>Search for Anaconda Prompt. When it opens type <code>jupyter notebook</code> and hit enter.</li>
+        </ol>
+    </p>
+    <p>
+        Once you've launched the application you'll be directed to the file directory screen. This defaults to the file directory that also houses your Anaconda installation. In my case it lives in my user folder. It should look something like this.
+        <br>
+        <br>
+        <img class="centre-img" src="/img/jupyter_launch.PNG" alt="Jupyter landing page">
+    </p>
+    <p>
+        From here, you can hit the <em>New</em> button and select <em>Python 3</em>. (It's unlikely that you'll have another option to choose from, but more about that later) Doing this should open up an <code>.ipynb</code> file which stands for iPython Notebook (not something that is critical to remember)
+    </p>
+    <h4>Working in a Notebook</h4>
+    <p>
+        There's just a few quick pointers that are needed to get started using a notebook. The name of the file is next to the Jupyter logo in the top left-hand corner. You can click on the name to change it.
+        <br>
+        <img class="centre-img" src="/img/notebook_title.PNG" alt="notebook title area">
+    </p>
+    <p>
+        The notebook will auto-save every so often, but it's a good idea to hit the ol' save button if you're exiting the notebook just to be sure. Speaking of which, the save button icon looks pretty similar to what you'd see if you were in Word or Excel and so do the Cut, Copy and Paste buttons.
+    </p>
+    <p>
+        The trick here is what you are copying and pasting. A Jupyter notebook's key element is cells. You'll see the first cell available for use when you open up the notebook. You can use cells for typing your code and running it by hitting Ctrl-Enter (for "in place" work) or Shift-Enter to move to the next cell (or create a new cell if there isn't one) once your code has executed. (I'm actually not sure what the command buttons are on a mac...)
+    </p>
+    <img class="centre-img" src="/img/notebook_cell.PNG" alt="notebook cell">
+    <p>
+        In the above case I just ran the simple operation of <code>1 + 2</code>. Of course the expected output is <code>3</code> which is what is shown. (<strong>Note:</strong> while it was executing you may have noticed a <code>*</code> symbol for a brief second. This means the code was busy executing. When you start running more complicated processes, this is normal and you should just let the cell do its thing)
+    </p>
+    <p>
+        One other thing you might notice is the blue border around the cell. This means that the cell is in "command mode". You can enter this mode either by running the cell (as described above) or by clicking the space to the left of the cell. This is in contrast to "edit mode" where you will have a green border around the cell. When you are in edit mode you can type and change the contents of the cell. When you have the blue border you can change the "format" of the cell.
+    </p>
+    <p>
+        This is helpful because in a notebook we can change the type of cell we are working with. The default type is a code cell, but another helpful type is a <em>markdown</em> cell. A markdown cell lets you write text about what is happening with your code. This is great for talking about what you're doing and explaining things to yourself or someone who might read your work.
+    </p>
+    <p>
+        To switch a cell to markdown type, you're looking for the dropdown menu that says <em>Code</em> by default. From there, you can choose the Markdown option. To switch back to a code cell you can select Code from the drop down menu again. Alternatively, you can use the keyboard shortcut <code>m</code> to switch to a markdown cell and <code>y</code> to switch to a code cell. <strong>Note:</strong> to use the keyboard shortcuts you must be in "command mode", otherwise you'll just be typing the values into the cell.
+    </p>
+    <p>
+        To add new cells you can use the <code>+</code> button in the tool bar or you can use the keyboard shortcut <code>a</code> to add a cell <em>above</em>, or a <code>b</code> to add a cell <em>below</em>. You can also move cells up and down in your notebook using the up and down arrow keys in the toolbar.
+    </p>
+    <h4>Markdown Tips</h4>
+    <p>
+        One thing you might be wondering is, "What is markdown?" In simple terms, markdown is a simplified html verion. HTML stands for Hypertext Markup Language, so the simplified version is mark<em>down</em>. (For a more detailed explanation, you can check out the <a href="https://en.wikipedia.org/wiki/Markdown" rel="noopener noreferrer" target="_blank">Wikipedia article</a>.)
+    </p>
+    <p>
+        When entering text into your markdown cells you can just type regular text and leave it, but there's a lot of text formatting support that is also available. You can create headers with the <code>#</code> symbol and text after it. Try typing <code># My Title</code> into a markdown cell, running it and seeing what happens. The more <code>#</code> you use in the beginning sequence, the smaller the heading text.
+    </p>
+    <p>
+        You can also other basic formatting:
+        <ul>
+            <li><strong>bold</strong>: Use two <code>*</code> on either side of the text you want to bold <code>**like this**</code> and then run the cell.</li>
+            <li><strong>italics</strong>: Use an underscore to the left and right of the text <code>_like this_</code>.</li>
+            <li><strong>bullets</strong>: Use a dash, a space and then your text to create a bullet point. For more bullets in the list, press enter and repeat.</li>
+        </ul>
+    </p>
+    <p>
+        (<strong>Note:</strong> To edit a markdown cell after you have run it, just double click the cell.) For many more details on markdown syntax you can check out the <a href="https://www.markdownguide.org/basic-syntax/" rel="noopener noreferrer" target="_blank">Markdown Guide</a>. You can also use <em>LaTex</em> to add mathematical symbols to markdown. If you want to use LaTex inline with your text you wrap it in a <code>$</code> on either side. If you're looking to add a block of LaTex, you use three <code>$</code> at the top and bottom of the text. For more tips on using LaTex for math symbols, you can check out this introductory <a href="https://www.latex-tutorial.com/tutorials/amsmath/" rel="noopener noreferrer" target="_blank">tutorial</a>.
+    </p>
+    <p>
+        When you put it all together, you can make a document that seemlessly combines code and text that makes it possible to quick execute code and talk about it. Like this!
+    </p>
+    <img class="centre-img" src="/img/notebook.PNG" alt="notebook cells">
+    <h3>Til next time...</h3>
+    <p>
+        That's it for now. If you've been following along, why don't you play with creating some code and markdown cells and seeing what you can get to execute. I'll be back with my next article with some <strong>Python Basics</strong>!
+    </p>
+
+</article>
