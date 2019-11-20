@@ -1,0 +1,149 @@
+---
+layout: posts
+title: Python for SQL Developers&#58 Basic Data Types
+---
+
+<article>
+<header>
+    <h2>{{ page.title }}</h2>
+    <time datetime="2019-11-20T12:39">Nov 20</time>
+</header>
+
+<img src="/img/python_code.jpg" alt="Python class code">
+
+    <p>
+        If you've spent a lot of time working in SQL the transition to a different language can seem large. It is definitely the case that at the beginning things can feel slow and unintuitive, but the skills that are developed in thinking about how to work with and manipulate data in SQL <em>will</em> translate when working with Python, it's all just about practice!
+    </p>
+    <p>
+        Also, when learning something new, doing is much better than reading about it. So while you can keep up by reading through this article, if you'd like to follow along on your own, I've set up some Jupyter notebooks that will allow you to work alongside the article. You'll need a GitHub account to download the files but that's free and easy to set up. You can check out the notebooks <a href="https://github.com/rebeccaebarnes/python-for-sql" rel="noreferrer noopener" target="_blank">here</a>.
+    </p>
+    <h3>Important Differences</h3>
+    <p>
+        Before we get started exploring some of the specifics of Python, it's worth pointing out some key differences between the two languages. Remembering this can help avoid some debugging challenges down the line.
+    </p>
+    <h4>Python is case sensitive</h4>
+    <p>
+        When writing SQL, case usage is often very flexible. How case is used is often more about personal preference or organizational conventions than it is about differences that will affect the outcome of the query. This is <strong>NOT</strong> the case with Python.
+    </p>
+    <p>
+        For example, if we created a variable called <code>python</code> that contained the string "A python is a type of snake. It is also a programming language." and then tried to call the variable <code>Python</code> we would get a name error letting us know that we have not created a variable called "Python".
+    </p>
+    <img class="centre-img" src="/img/case_sensitive.PNG" alt="Python is case sensitive">
+    <h4>Python starts with 0</h4>
+    <p>
+        When working in SQL, if we wanted to start at the first value in a string, we would reference this using <strong>1</strong>. When working with Python, we index starting at <strong>0</strong>. To reference the item in the first position in our <code>python</code> variable we should use <code>python[0]</code>. If we use <code>python[1]</code> instead, we will get the value at the second positin, which is a space.
+    </p>
+    <img class="centre-img" src="/img/zero_index.PNG" alt="Python starts as zero">
+    <h4>Equals is for variables</h4>
+    <p>
+        Depending on the SQL dialect you use, you may be used to using <code>=</code> to evaluate whether two values are equal. This is <strong>NOT</strong> how this sign works in Python. In Python, if we want to compare whether two values are equal, we use two equals signs. If we use a single equals sign will result in the value being stored in our variable.
+    </p>
+    <img src="/img/two_equals_compare.PNG" alt="Equals is for variables">
+    <p>
+        The "does not equal" sign is also different in Python. Python uses <code>!=</code> for does not equal, instead of <code><></code> in SQL.
+    </p>
+    <h4>NULL is None</h4>
+    <p>
+        In Python, the default null data type is None. It is important to use the correct capitalization for Python to recognize the null value; without it, Python assumes that <code>none</code> is the name of a variable.
+    </p>
+    <img src="/img/null_is_none.PNG" alt="None is the default null value">
+    <h4>Code comments are different</h4>
+    <p>
+        In Python, in-line code comments use the <code>#</code> symbol. This is the equivalent of <code>--</code>. For multi-line comments, Python uses three double or single quotes at the beginning and end of the code. This is instead of the <code>/* */</code> used in SQL.
+    </p>
+    <h3>Basic Data Types</h3>
+    <p>
+        With that brief review of differences, we can now get into some basics of working with Python. The general concepts of data types exists in Python, and there is a general ability to map the SQL data types to Python equivalents.
+    </p>
+    <p>
+        Here's how they map:
+    </p>
+    <ul>
+        <li><strong>string:</strong> text, char, varchar</li>
+        <li><strong>integer:</strong> numeric (whole numbers only)</li>
+        <li><strong>float:</strong> numeric (decimal numbers)</li>
+        <li><strong>boolean:</strong> similar to binary but not exact comparison</li>
+    </ul>
+    <p>
+        When working with data types in Python, we can separate them out on two different dimensions, mutability and orderedness. While these concepts are not essential for starting out, they can be helpful to file away for later use.
+    </p>
+    <p>
+        An object or data type is <strong>mutable</strong> when the ID assigned to it can be changed. <strong>Immutable</strong> objects are not able to be changed and are faster to retrieve from memory.
+    </p>
+    <p>
+        An object or data type is <strong>ordered</strong> when the items it contains are stored in a specific order and can be retrieved by referencing the order of the object.
+    </p>
+    <p>
+        Now that we've been introduced to the types and basic characteristics, let's review each in a bit more detail.
+    </p>
+    <h4>Strings</h4>
+    <p>
+        Strings (<code>str</code>) are Python's text data type. Unlike SQL, which has a variety of different text types that assist in storage and retrieval times, Python uses strings to cover every text type. Strings can be as short as one letter (or an empty string) or as long as desired.
+    </p>
+    <p>
+        Strings are immutable and ordered. They are designated through the use of single or double quotes.
+    </p>
+    <img src="/img/string_dtype.PNG" alt="String data types">
+    <p>
+        Strings have some unique functioning in Python in that they can be multiplied and summed to create longer strings. This is equivalent to concatenating with <code>||</code> in SQL.
+    </p>
+    <img src="/img/string_functions.PNG" alt="String functions">
+    <p>
+        They can also be indexed and sliced to return portions of the string. In Python we use square brackets (<code>[]</code>) to indicate that we are indexing or slicing and use a colon (<code>:</code>) to indicate "between" to numbers. This is the equivalent of <code>SUBSTRING</code> and similar functions in SQL.
+    </p>
+    <img src="/img/string_functions.PNG" alt="String slicing and indexing">
+    <h4>Integers</h4>
+    <p>
+        Whereas SQL has one basic numeric type, Python has two. The first is the integer (<code>int</code>) that captures whole numbers. (The lack of a decimal point makes it smaller in memory) Both negative and positive numbers are integers. Integers are immutable and unordered (they can't be indexed or sliced).
+    </p>
+    <img src="/img/integer_dtype.PNG" alt="Integer data types">
+    <p>
+        Python has a similarity to SQL with it's integers in that you can't confirm a data type simply by looking at the value. It's possible for a number to actually be a string.
+    </p>
+    <img src="/img/check_dtype.PNG" alt="Data type may not be apparent on inspection">
+    <p>
+        The arithmetic operators in Python are the same as in SQL. The only difference is in how "power" is designated. In Python we use double asterix (<code>**</code>) as the equivalent of the <code>POWER</code> function.
+    </p>
+    <img src="/img/integer_math.PNG" alt="Python math operators">
+    <p>
+        It's also possible to change data types in Python in a similar way to that which is used in SQL. We wrap the object in a function of the name of the new data type.
+    </p>
+    <img src="/img/convert_dtype.PNG" alt="Data types can be converted">
+    <h4>Floats</h4>
+    <p>
+        Floats are Python's other basic numeric data type. It capture decimal numbers, or numbers with a floating point (the exact position of the point in relation to the other numbers is not defined). Floats are also immutable and unordered, as is the case with integers. Any mathematical operation that you can do with integers you can do with floats.
+    </p>
+    <p>
+        Floats are designated by the presence of a decimal point at the beginning, end, or middle of a number.
+    </p>
+    <img src="/img/float_dtype.PNG" alt="Float data types">
+    <p>
+        Floats can be converted to ints in the same way that strings can be converted to ints. The result is similar to using the <code>FLOOR</code> function.
+    </p>
+    <img src="/img/float_to_int.PNG" alt="Float converted to int">
+    <h4>Boolean</h4>
+    <p>
+        Booleans (<code>bool</code>) are logical values that can be one of two values, True or False. They have a similar function to binary values in SQL but are not a direct equivalent. Booleans are also immutable and unordered. Because Python is case sensitive, it is once again important to use the correct casing for Python to recognize the object.
+    </p>
+    <img src="/img/bool_dtype.PNG" alt="Boolean data types">
+    <p>
+        The typical function of bools are to act as the result of comparisons. Using the mathematical comparison operators, we can convey whether an expression is true or false.
+    </p>
+    <img src="/img/bool_compare.PNG" alt="Boolean comparisons">
+    <p>
+        (If you've been following along in the notebook you may wish to complete this section before reading further) Boolean values can also act in mathematical operations. True takes the value of 1, and False takes the value of 0.
+    </p>
+    <img src="/img/bool_math.PNG" alt="Boolean math">
+    <h3>Summary of Equivalencies</h3>
+    <p>
+        To help keep track of the equivalent functions in Python from SQL, at the end of each section I'll provide a summary of the comparions.
+        <ul>
+            <li><strong>CONCAT:</strong> Joining strings using +</li>
+            <li><strong>SUBSTRING:</strong> Indexing and slicing using [] and :</li>
+            <li><strong>Arithmetic functions:</strong> The same for Python and SQL</li>
+            <li><strong>POWER:</strong> Using **</li>
+            <li><strong>Type conversion:</strong> Wrapping an object in the function of the desired data type</li>
+        </ul>
+    </p>
+    <p><strong>Python has an additional set of data types called collections. We'll look at those in the next article!</strong></p>
+</article>
